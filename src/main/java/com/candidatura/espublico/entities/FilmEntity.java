@@ -1,5 +1,7 @@
 package com.candidatura.espublico.entities;
 
+import java.util.Date;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -26,6 +28,11 @@ public class FilmEntity {
     @Setter
     @Column(name="title")
     String title;
+    
+    @Getter
+    @Setter
+    @Column(name="opening_crawl")
+    String openingCrawl;
 
     @Getter
     @Setter
@@ -36,6 +43,26 @@ public class FilmEntity {
     @Setter
     @Column(name="producer")
     String producer;
+    
+    @Getter
+    @Setter
+    @Column(name="release_date")
+    Date releaseDate;
+    
+    @Getter
+    @Setter
+    @Column(name="created")
+    Date created;
+    
+    @Getter
+    @Setter
+    @Column(name="edited")
+    Date edited;
+    
+    @Getter
+    @Setter
+    @Column(name="url")
+    String url;
 
 
 }
