@@ -18,6 +18,11 @@ public class PeopleEntity {
     @Setter
     @Column(name="people_id")
     int peopleId;
+    
+    @Getter
+    @Setter
+    @Column(name="name")
+    String name;
 
     @Getter
     @Setter
