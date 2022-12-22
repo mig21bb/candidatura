@@ -12,7 +12,7 @@ public class People {
 
     private int peopleId;
     private String name;
-    private int mass;
+    private int mass;d
     private String hairColor;
     private String skinColor;
     private String eyeColor;
