@@ -2,6 +2,8 @@ package com.candidatura.espublico.utils;
 
 import com.candidatura.espublico.entities.FilmEntity;
 import com.candidatura.espublico.objects.Film;
+import com.candidatura.espublico.objects.People;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -30,5 +32,15 @@ public class Utils {
     public int getIdFromUrl(String url){
         return Integer.parseInt(url.split("/")[url.split("/").length-1]);
     }
+
+	public FilmEntity fillPeopleEntity(People people) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public FilmEntity fillStarshipEntity(Film ship) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
