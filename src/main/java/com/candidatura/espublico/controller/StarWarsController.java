@@ -1,11 +1,14 @@
 package com.candidatura.espublico.controller;
 
 import com.candidatura.espublico.entities.FilmEntity;
+import com.candidatura.espublico.entities.PeopleEntity;
+import com.candidatura.espublico.entities.StarshipEntity;
 import com.candidatura.espublico.repositories.FilmRepository;
 import com.candidatura.espublico.repositories.PeopleRepository;
 import com.candidatura.espublico.repositories.StarshipRepository;
 import com.candidatura.espublico.objects.Film;
 import com.candidatura.espublico.objects.People;
+import com.candidatura.espublico.objects.Starship;
 import com.candidatura.espublico.utils.Utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +17,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
 @Controller
@@ -40,7 +42,7 @@ public class StarWarsController {
      * @param model
      * @return
      */
-    @GetMapping("/getFilm/{film_id}")
+    @GetMapping("/getFilm/{id}")
     public String getFilm(@PathVariable(name="id", required=false) int id, Model model) {
 
 
@@ -75,16 +77,16 @@ public class StarWarsController {
 
         String uri = "https://swapi.py4e.com/api/people/"+id;
         RestTemplate restTemplate = new RestTemplate();
+	    try{
+	        People people = new People();
+	        people = restTemplate.getForObject(uri, People.class);
+	        log.debug(people.toString());
+	
+	        model.addAttribute("people", people);
+	
+	        PeopleEntity peopleEntity = utils.fillPeopleEntity(people);
 
-        People people = new People();
-        people = restTemplate.getForObject(uri, People.class);
-        log.debug(people.toString());
-
-        model.addAttribute("people", people);
-
-        FilmEntity filmEntity = utils.fillPeopleEntity(people);
-        try{
-            filmRepository.save(filmEntity);
+        	peopleRepository.save(peopleEntity);
         }catch (Exception e){
             log.error(e.getMessage());
         }
@@ -104,15 +106,15 @@ public class StarWarsController {
 
         String uri = "https://swapi.py4e.com/api/starship/"+id;
         RestTemplate restTemplate = new RestTemplate();
-
-        Film ship = new Film();
-        ship = restTemplate.getForObject(uri, Film.class);
-        log.debug(ship.toString());
-
-        model.addAttribute("film", ship);
-
-        FilmEntity filmEntity = utils.fillStarshipEntity(ship);
         try{
+	        Starship ship = new Starship();
+	        ship = restTemplate.getForObject(uri, Starship.class);
+	        log.debug(ship.toString());
+	
+	        model.addAttribute("ship", ship);
+	
+	        StarshipEntity filmEntity = utils.fillStarshipEntity(ship);
+
             starshipRepository.save(filmEntity);
         }catch (Exception e){
             log.error(e.getMessage());

@@ -52,18 +52,13 @@ public class StarshipEntity {
     
     @Getter
     @Setter
-    @Column(name="min_crew")
-    int minCrew;
-    
-    @Getter
-    @Setter
-    @Column(name="max_crew")
-    int maxCrew;
-    
+    @Column(name="crew")
+    String Crew;
+        
     @Getter
     @Setter
     @Column(name="passengers")
-    int passengers;
+    String passengers;
     
     @Getter
     @Setter

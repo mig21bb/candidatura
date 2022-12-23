@@ -10,30 +10,34 @@ import java.util.Date;
 @Data
 public class People {
 
-    private int peopleId;
+    //private Integer peopleId;
     private String name;
-    private int mass;
-    private String hairColor;
-    private String skinColor;
-    private String eyeColor;
-    private String birthYear;
-    private int homeworld;
+    private Integer height; 
+    private Integer mass;
+    private String hair_color;
+    private String skin_color;
+    private String eye_color;
+    private String birth_year;
+    private Integer homeworld;
     private Date created;
     private Date edited;
     private String url;
+    private String[] films;
+    private String[] starships;
 
     public People() {}
+    
     public People(PeopleEntity ent){
-        this.peopleId=ent.getPeopleId();
+        //this.peopleId=ent.getPeopleId();
         this.name=ent.getName();
-        this.birthYear=ent.getBirthYear();
+        this.birth_year=ent.getBirthYear();
         this.created=ent.getCreated();
         this.edited=ent.getEdited();
-        this.eyeColor=ent.getEyeColor();
-        this.hairColor=ent.getHairColor();
+        this.eye_color=ent.getEyeColor();
+        this.hair_color=ent.getHairColor();
         this.homeworld=ent.getHomeworld();
         this.mass=ent.getMass();
-        this.skinColor=ent.getSkinColor();
+        this.skin_color=ent.getSkinColor();
         this.url=ent.getUrl();      
     }
 

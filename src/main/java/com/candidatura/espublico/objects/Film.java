@@ -8,8 +8,8 @@ import java.util.Date;
 @Data
 public class Film {
 
-    private int episode_id;
-    private String  title;
+    private Integer episode_id;
+    private String title;
     private String opening_crawl;
     private String director;
     private String producer;
@@ -21,11 +21,17 @@ public class Film {
     private String[] starships;
 
     public Film() {}
+    
     public Film(FilmEntity ent){
         this.episode_id=ent.getEpisodeId();
         this.title=ent.getTitle();
         this.director=ent.getDirector();
         this.producer=ent.getProducer();
+        this.release_date=ent.getReleaseDate();
+        this.created=ent.getCreated();
+        this.edited=ent.getEdited();
+        this.url=ent.getUrl();
+        this.opening_crawl=ent.getOpeningCrawl();        
     }
 
 

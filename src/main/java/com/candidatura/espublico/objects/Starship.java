@@ -10,24 +10,25 @@ import java.util.Date;
 @Data
 public class Starship {
 
-    private int starshipId;
+    private Integer starshipId;
     private String name;
     private String model;
     private String manufacturer;
-    private String costInCredits;
-    private int length;
-    private int maxAtmospheringSpeed;
-    private int minCrew;
-    private int maxCrew;
-    private int passengers;
-    private long cargoCapacity;
+    private String cost_in_credits;
+    private Integer length;
+    private Integer max_atmosphering_speed;
+    private String crew;
+    private String passengers;
+    private Long cargo_capacity;
     private String consumables;
-    private BigDecimal hiperdriverRating;
-    private int mglt;
-    private String starshipClass;
+    private BigDecimal hyperdrive_rating;
+    private Integer MGLT;
+    private String starship_class;
     private Date created;
     private Date edited;
     private String url;
+    private String[] pilots;
+    private String[] films;
 
     public Starship() {}
     public Starship(StarshipEntity ent){
@@ -35,17 +36,16 @@ public class Starship {
     	this.name=ent.getName();
     	this.model=ent.getModel();
     	this.manufacturer=ent.getManufacturer();
-    	this.costInCredits=ent.getCostInCredits();
+    	this.cost_in_credits=ent.getCostInCredits();
     	this.length=ent.getLength();
-    	this.maxAtmospheringSpeed=ent.getMaxAtmospheringSpeed();
-    	this.minCrew=ent.getMinCrew();
-    	this.maxCrew=ent.getMaxCrew();
+    	this.max_atmosphering_speed=ent.getMaxAtmospheringSpeed();
+    	this.crew=ent.getCrew();
     	this.passengers=ent.getPassengers();
-    	this.cargoCapacity=ent.getCargoCapacity();
+    	this.cargo_capacity=ent.getCargoCapacity();
     	this.consumables=ent.getConsumables();
-    	this.hiperdriverRating=ent.getHiperdriverRating();
-    	this.mglt=ent.getMglt();
-    	this.starshipClass=ent.getStarshipClass();
+    	this.hyperdrive_rating=ent.getHiperdriverRating();
+    	this.MGLT=ent.getMglt();
+    	this.starship_class=ent.getStarshipClass();
     	this.created=ent.getCreated();
     	this.edited=ent.getEdited();
     	this.url=ent.getUrl();
