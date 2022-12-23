@@ -22,7 +22,7 @@ public class Starship {
     private Long cargo_capacity;
     private String consumables;
     private BigDecimal hyperdrive_rating;
-    private Integer MGLT;
+    private String MGLT;
     private String starship_class;
     private Date created;
     private Date edited;

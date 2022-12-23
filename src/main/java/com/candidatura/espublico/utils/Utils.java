@@ -49,7 +49,7 @@ public class Utils {
 		peopleEntity.setEdited(people.getEdited());
 		peopleEntity.setEyeColor(people.getEye_color());
 		peopleEntity.setHairColor(people.getHair_color());
-		peopleEntity.setHomeworld(people.getHomeworld());
+		peopleEntity.setHomeworld(getIdFromUrl(people.getHomeworld()));
 		peopleEntity.setMass(people.getMass());
 		peopleEntity.setName(people.getName());
 		peopleEntity.setPeopleId(this.getIdFromUrl(people.getUrl()));

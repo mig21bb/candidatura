@@ -18,7 +18,7 @@ public class People {
     private String skin_color;
     private String eye_color;
     private String birth_year;
-    private Integer homeworld;
+    private String homeworld;
     private Date created;
     private Date edited;
     private String url;
@@ -35,7 +35,7 @@ public class People {
         this.edited=ent.getEdited();
         this.eye_color=ent.getEyeColor();
         this.hair_color=ent.getHairColor();
-        this.homeworld=ent.getHomeworld();
+        this.homeworld="https://swapi.dev/api/planets/"+ent.getHomeworld();
         this.mass=ent.getMass();
         this.skin_color=ent.getSkinColor();
         this.url=ent.getUrl();      

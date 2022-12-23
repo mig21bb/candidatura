@@ -10,6 +10,10 @@ import com.candidatura.espublico.objects.Film;
 import com.candidatura.espublico.objects.People;
 import com.candidatura.espublico.objects.Starship;
 import com.candidatura.espublico.utils.Utils;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,7 +66,7 @@ public class StarWarsController {
             log.error(e.getMessage());
         }
 
-        return "testPage";
+        return "film";
     }
     
     /**
@@ -104,7 +108,7 @@ public class StarWarsController {
     public String getStarship(@PathVariable(name="id", required=false) int id, Model model) {
 
 
-        String uri = "https://swapi.py4e.com/api/starship/"+id;
+        String uri = "https://swapi.py4e.com/api/starships/"+id;
         RestTemplate restTemplate = new RestTemplate();
         try{
 	        Starship ship = new Starship();
@@ -118,9 +122,39 @@ public class StarWarsController {
             starshipRepository.save(filmEntity);
         }catch (Exception e){
             log.error(e.getMessage());
+            e.printStackTrace();
         }
 
-        return "testPage";
+        return "starship";
+    }
+    
+    /**
+     * Obtener un objeto film del servicio rest y guardarlo en la BBDD
+     * @param film_id
+     * @param model
+     * @return
+     */
+    @GetMapping("/cargarPeople")
+    public String cargarPeople( Model model) {
+
+        String uri="https://swapi.py4e.com/api/people/";
+        RestTemplate restTemplate = new RestTemplate();
+        try{
+	        List<People> characters = new ArrayList<>();
+	        characters = (List<People>) restTemplate.getForEntity(uri, People.class);
+	        log.debug(characters.toString());
+	
+	        model.addAttribute("characters", characters);
+	
+	        //StarshipEntity filmEntity = utils.fillStarshipEntity(ship);
+
+            //starshipRepository.save(filmEntity);
+        }catch (Exception e){
+            log.error(e.getMessage());
+            e.printStackTrace();
+        }
+
+        return "starship";
     }
 
     @GetMapping("/dropDataBase")
@@ -132,7 +166,7 @@ public class StarWarsController {
             log.error(e.getMessage());
         }
 
-        return "testPage";
+        return "people";
     }
 
 

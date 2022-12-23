@@ -78,7 +78,7 @@ public class StarshipEntity {
     @Getter
     @Setter
     @Column(name="mglt")
-    int mglt;
+    String mglt;
     
     @Getter
     @Setter
