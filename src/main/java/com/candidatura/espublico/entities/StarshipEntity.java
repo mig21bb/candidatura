@@ -1,12 +1,11 @@
 package com.candidatura.espublico.entities;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -43,12 +42,12 @@ public class StarshipEntity {
     @Getter
     @Setter
     @Column(name="length")
-    int length;
+    String length;
     
     @Getter
     @Setter
     @Column(name="max_atmosphering_speed")
-    int maxAtmospheringSpeed;
+    String maxAtmospheringSpeed;
     
     @Getter
     @Setter
@@ -63,7 +62,7 @@ public class StarshipEntity {
     @Getter
     @Setter
     @Column(name="cargo_capacity")
-    long cargoCapacity;
+    String cargoCapacity;
     
     @Getter
     @Setter
@@ -73,7 +72,7 @@ public class StarshipEntity {
     @Getter
     @Setter
     @Column(name="hiperdrive_rating")
-    BigDecimal hiperdriverRating;
+    String hiperdriverRating;
     
     @Getter
     @Setter
@@ -99,5 +98,12 @@ public class StarshipEntity {
     @Setter
     @Column(name="url")
     String url;
-    
+
+    @ManyToMany(mappedBy = "ships")
+    public List<PeopleEntity> pilots = new ArrayList<>();
+
+    public StarshipEntity() {}
+    public StarshipEntity(int starshipId) {
+        this.starshipId = starshipId;
+    }
 }

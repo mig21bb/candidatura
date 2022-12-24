@@ -1,11 +1,10 @@
 package com.candidatura.espublico.entities;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -79,5 +78,27 @@ public class PeopleEntity {
     @Column(name="url")
     String url;
 
+    @Getter
+    @Setter
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
+    @JoinTable(name = "characters",
+            joinColumns = @JoinColumn(name = "people_id"),
+            inverseJoinColumns = @JoinColumn(name = "film_id")
+    )
+    private List<FilmEntity> films = new ArrayList<>();
 
+    @Getter
+    @Setter
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
+    @JoinTable(name = "pilots",
+            joinColumns = @JoinColumn(name = "people_id"),
+            inverseJoinColumns = @JoinColumn(name = "starship_id")
+    )
+    private List<StarshipEntity> ships = new ArrayList<>();
 }

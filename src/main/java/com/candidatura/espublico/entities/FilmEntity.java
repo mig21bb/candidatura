@@ -1,11 +1,11 @@
 package com.candidatura.espublico.entities;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.candidatura.espublico.objects.People;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -64,5 +64,11 @@ public class FilmEntity {
     @Column(name="url")
     String url;
 
+    @ManyToMany(mappedBy = "films")
+    public List<PeopleEntity> characters = new ArrayList<>();
 
+    public FilmEntity() {}
+    public FilmEntity(int filmId) {
+        this.filmId = filmId;
+    }
 }

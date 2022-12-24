@@ -1,6 +1,9 @@
 package com.candidatura.espublico.bl;
 
 import com.candidatura.espublico.controller.StarWarsController;
+import com.candidatura.espublico.entities.FilmEntity;
+import com.candidatura.espublico.entities.PeopleEntity;
+import com.candidatura.espublico.entities.StarshipEntity;
 import com.candidatura.espublico.objects.Film;
 import com.candidatura.espublico.objects.People;
 import com.candidatura.espublico.objects.Starship;
@@ -11,6 +14,8 @@ import com.candidatura.espublico.utils.Utils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +25,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class CargaBL {
@@ -44,6 +50,7 @@ public class CargaBL {
      * @param uri
      * @return
      */
+    @Transactional
     public List<People> cargarPeople(String uri) throws JsonProcessingException {
         RestTemplate restTemplate = new RestTemplate();
         List<People> characters = new ArrayList<>();
@@ -58,10 +65,14 @@ public class CargaBL {
             next = root.path("next");
             array = root.path("results");
             People p = new People();
+            PeopleEntity ent = new PeopleEntity();
             if(array.isArray()){
                 for(JsonNode node: array){
                     p = mapper.treeToValue(node, People.class);
-                    peopleRepository.save(utils.fillPeopleEntity(p));
+                    ent = utils.fillPeopleEntity(p);
+                    this.cargaPelis(ent, p.getFilms());
+                    this.cargaShips(ent, p.getStarships());
+                    peopleRepository.save(ent);
                     characters.add(p);
                 }
             }
@@ -74,6 +85,23 @@ public class CargaBL {
 
     }
 
+    private PeopleEntity cargaPelis(PeopleEntity ent, String[] films) {
+        for(String film: films){
+            Optional<FilmEntity> f = filmRepository.findById(utils.getIdFromUrl(film));
+            ent.getFilms().add(f.get());
+        }
+        return ent;
+    }
+
+    private PeopleEntity cargaShips(PeopleEntity ent, String[] ships) {
+        for(String ship: ships){
+            Optional<StarshipEntity> s = starshipRepository.findById(utils.getIdFromUrl(ship));
+            ent.getShips().add(s.get());
+        }
+        return ent;
+    }
+
+    @Transactional
     public List<Film> cargarFilms(String uri) throws JsonProcessingException {
         RestTemplate restTemplate = new RestTemplate();
         List<Film> films = new ArrayList<>();
@@ -104,6 +132,7 @@ public class CargaBL {
 
     }
 
+    @Transactional
     public List<Starship> cargarShips(String uri) throws JsonProcessingException {
         RestTemplate restTemplate = new RestTemplate();
         List<Starship> ships = new ArrayList<>();
@@ -120,7 +149,14 @@ public class CargaBL {
             Starship s = new Starship();
             if(array.isArray()){
                 for(JsonNode node: array){
+                    String MGLT = "";
+                    if (node instanceof ObjectNode){
+                        ObjectNode object = (ObjectNode) node;
+                        MGLT = object.findValue("MGLT").textValue();
+                        object.remove("MGLT");
+                    }
                     s = mapper.treeToValue(node, Starship.class);
+                    s.setMGLT(MGLT);
                     starshipRepository.save(utils.fillStarshipEntity(s));
                     ships.add(s);
                 }
@@ -134,10 +170,13 @@ public class CargaBL {
 
     }
 
-    public boolean dropDataBase(){
+    @Transactional
+    public boolean deleteDataBase(){
         filmRepository.deleteAll();
-        peopleRepository.deleteAll();
         starshipRepository.deleteAll();
+        peopleRepository.deleteAll();
         return true;
     }
+
+
 }

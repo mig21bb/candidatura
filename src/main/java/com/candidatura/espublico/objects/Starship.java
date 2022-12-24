@@ -15,13 +15,13 @@ public class Starship {
     private String model;
     private String manufacturer;
     private String cost_in_credits;
-    private Integer length;
-    private Integer max_atmosphering_speed;
+    private String length;
+    private String max_atmosphering_speed;
     private String crew;
     private String passengers;
-    private Long cargo_capacity;
+    private String cargo_capacity;
     private String consumables;
-    private BigDecimal hyperdrive_rating;
+    private String hyperdrive_rating;
     private String MGLT;
     private String starship_class;
     private Date created;
@@ -51,5 +51,12 @@ public class Starship {
     	this.url=ent.getUrl();
     }
 
+    public void setMGLT(String MGLT){
+        this.MGLT=MGLT;
+    }
+
+    public String getMGLT(){
+        return this.MGLT;
+    }
 
 }
