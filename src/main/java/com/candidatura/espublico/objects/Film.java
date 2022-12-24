@@ -19,6 +19,10 @@ public class Film {
     private String url;
     private String[] characters;
     private String[] starships;
+    private String[] planets;
+    private String[] vehicles;
+
+    private String[] species;
 
     public Film() {}
     

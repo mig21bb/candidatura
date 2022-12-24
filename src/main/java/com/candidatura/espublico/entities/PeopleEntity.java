@@ -28,11 +28,16 @@ public class PeopleEntity {
     @Setter
     @Column(name="homeworld")
     int homeworld;
+
+    @Getter
+    @Setter
+    @Column(name="height")
+    String height;
     
     @Getter
     @Setter
     @Column(name="mass")
-    int mass;
+    String mass;
 
     @Getter
     @Setter
@@ -53,6 +58,11 @@ public class PeopleEntity {
     @Setter
     @Column(name="birth_year")
     String birthYear;
+
+    @Getter
+    @Setter
+    @Column(name="gender")
+    String gender;
     
     @Getter
     @Setter

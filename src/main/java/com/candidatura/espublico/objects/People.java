@@ -12,18 +12,23 @@ public class People {
 
     //private Integer peopleId;
     private String name;
-    private Integer height; 
-    private Integer mass;
+    private String height;
+    private String mass;
     private String hair_color;
     private String skin_color;
     private String eye_color;
     private String birth_year;
+    private String gender;
     private String homeworld;
     private Date created;
     private Date edited;
     private String url;
     private String[] films;
     private String[] starships;
+    private String[] species;
+    private String[] vehicles;
+
+
 
     public People() {}
     
@@ -37,7 +42,9 @@ public class People {
         this.hair_color=ent.getHairColor();
         this.homeworld="https://swapi.dev/api/planets/"+ent.getHomeworld();
         this.mass=ent.getMass();
+        this.height=ent.getHeight();
         this.skin_color=ent.getSkinColor();
+        this.gender=ent.getGender();
         this.url=ent.getUrl();      
     }
 

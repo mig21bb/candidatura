@@ -51,7 +51,9 @@ public class Utils {
 		peopleEntity.setHairColor(people.getHair_color());
 		peopleEntity.setHomeworld(getIdFromUrl(people.getHomeworld()));
 		peopleEntity.setMass(people.getMass());
+		peopleEntity.setHeight(people.getHeight());
 		peopleEntity.setName(people.getName());
+		peopleEntity.setGender(people.getGender());
 		peopleEntity.setPeopleId(this.getIdFromUrl(people.getUrl()));
 		peopleEntity.setSkinColor(people.getSkin_color());
 		peopleEntity.setUrl(people.getUrl());
