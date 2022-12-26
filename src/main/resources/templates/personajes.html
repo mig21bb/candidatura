@@ -25,6 +25,13 @@
     </ul>
     <button type="submit">Buscar piloto</button>
     </form>
+    <div th:if="${not #lists.isEmpty(pilotoNave)}">
+    <h1 th:text="${pilotoNave[0].shipName}">La nave del misterio</h1>
+    <ul >
+        <li th:each="fps, iter:${pilotoNave}" th:class="${iter.odd}? 'odd'">
+            <p>En <span th:text="${fps.title}">pelicula</span> la pilotaba <span th:text="${fps.pilotName}">este piloto</span></p>
+        </li>
+    </ul>
 <script>
     function toggleListado(element){
         var node = element.nextSibling.nextSibling;

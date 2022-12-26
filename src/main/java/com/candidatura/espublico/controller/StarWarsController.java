@@ -1,6 +1,7 @@
 package com.candidatura.espublico.controller;
 
 import com.candidatura.espublico.RESTobjects.Film;
+import com.candidatura.espublico.RESTobjects.FilmPilotShip;
 import com.candidatura.espublico.bl.CargaBL;
 import com.candidatura.espublico.bl.ConsultaBL;
 import com.candidatura.espublico.RESTobjects.People;
@@ -58,12 +59,13 @@ public class StarWarsController {
     }
 
     @GetMapping("/buscarPiloto")
-    public String listarPersonajes(@RequestParam(name="episode", required=false)Integer[] episodes, Model model) {
+    public String listarPersonajes(@RequestParam(name="episode", required=false)String[] episodes, Model model) {
 
-        List<Film> pelis = consultaBL.consultaPelis(episodes);
+
 
         model.addAttribute("personajes", consultaBL.consultaPeople());
         model.addAttribute("peliculas", consultaBL.consultaPelis());
+        model.addAttribute("pilotoNave", consultaBL.consultaPilotoNave(episodes));
 
         return "personajes";
     }

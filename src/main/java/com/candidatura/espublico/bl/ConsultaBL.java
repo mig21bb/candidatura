@@ -2,6 +2,7 @@ package com.candidatura.espublico.bl;
 
 import com.candidatura.espublico.RESTobjects.Film;
 import com.candidatura.espublico.DTO.PeopleDTO;
+import com.candidatura.espublico.RESTobjects.FilmPilotShip;
 import com.candidatura.espublico.RESTobjects.People;
 import com.candidatura.espublico.RESTobjects.Starship;
 import com.candidatura.espublico.entities.PeopleEntity;
@@ -22,6 +23,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -74,10 +76,12 @@ public class ConsultaBL {
     }
 
     @Transactional
-    public List<Film> consultaPilotoNave(Integer[] episodes)  {
+    public List<FilmPilotShip> consultaPilotoNave(String[] episodes)  {
 
-        List<Film> peliculas = null;//=StreamSupport.stream(starshipRepository.findById(episodes).spliterator(), false).map(Film::new).collect(Collectors.toList());
-        return peliculas;
+        List<FilmPilotShip> filmPilotShips = peopleRepository.findPilotShip(Arrays.asList(episodes));
+
+
+        return filmPilotShips;
     }
 
     public List<Film> fillCharacterFilms(int people_id){
