@@ -1,10 +1,9 @@
-package com.candidatura.espublico.objects;
+package com.candidatura.espublico.RESTobjects;
 
 import com.candidatura.espublico.entities.StarshipEntity;
 
 import lombok.Data;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
 @Data

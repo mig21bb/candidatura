@@ -1,4 +1,4 @@
-package com.candidatura.espublico.objects;
+package com.candidatura.espublico.RESTobjects;
 
 import com.candidatura.espublico.entities.FilmEntity;
 import com.candidatura.espublico.entities.PeopleEntity;
@@ -6,6 +6,7 @@ import com.candidatura.espublico.entities.PeopleEntity;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 public class People {
@@ -28,6 +29,9 @@ public class People {
     private String[] species;
     private String[] vehicles;
 
+    private List<Starship> starshipsList;
+
+    private List<Film> filmList;
 
 
     public People() {}
@@ -45,7 +49,7 @@ public class People {
         this.height=ent.getHeight();
         this.skin_color=ent.getSkinColor();
         this.gender=ent.getGender();
-        this.url=ent.getUrl();      
+        this.url=ent.getUrl();
     }
 
 

@@ -1,19 +1,14 @@
 package com.candidatura.espublico.controller;
 
 import com.candidatura.espublico.bl.CargaBL;
-import com.candidatura.espublico.objects.Film;
-import com.candidatura.espublico.objects.People;
-import com.candidatura.espublico.objects.Starship;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.candidatura.espublico.bl.ConsultaBL;
+import com.candidatura.espublico.RESTobjects.People;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +22,9 @@ public class StarWarsController {
 
     @Autowired
     CargaBL cargaBL;
+
+    @Autowired
+    ConsultaBL consultaBL;
 
     @GetMapping("/cargarBBDD")
     public String cargarBBDD( Model model) {
@@ -50,6 +48,11 @@ public class StarWarsController {
 
     @GetMapping("/listarPersonajes")
     public String listarPersonajes( Model model) {
+        List<People> characters = new ArrayList<>();
+
+        model.addAttribute("personajes", consultaBL.consultaPeople());
+        model.addAttribute("peliculas", consultaBL.consultaPelis());
+
         return "personajes";
     }
 }

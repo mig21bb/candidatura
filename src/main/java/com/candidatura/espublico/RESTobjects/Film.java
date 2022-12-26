@@ -1,4 +1,4 @@
-package com.candidatura.espublico.objects;
+package com.candidatura.espublico.RESTobjects;
 
 import com.candidatura.espublico.entities.FilmEntity;
 import lombok.Data;

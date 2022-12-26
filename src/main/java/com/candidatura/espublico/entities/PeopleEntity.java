@@ -78,8 +78,7 @@ public class PeopleEntity {
     @Column(name="url")
     String url;
 
-    @Getter
-    @Setter
+
     @ManyToMany(cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE
@@ -88,10 +87,11 @@ public class PeopleEntity {
             joinColumns = @JoinColumn(name = "people_id"),
             inverseJoinColumns = @JoinColumn(name = "film_id")
     )
-    private List<FilmEntity> films = new ArrayList<>();
-
     @Getter
     @Setter
+    private List<FilmEntity> films = new ArrayList<>();
+
+
     @ManyToMany(cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE
@@ -100,5 +100,7 @@ public class PeopleEntity {
             joinColumns = @JoinColumn(name = "people_id"),
             inverseJoinColumns = @JoinColumn(name = "starship_id")
     )
+    @Getter
+    @Setter
     private List<StarshipEntity> ships = new ArrayList<>();
 }

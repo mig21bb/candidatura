@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.candidatura.espublico.objects.People;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

@@ -3,11 +3,14 @@ package com.candidatura.espublico.utils;
 import com.candidatura.espublico.entities.FilmEntity;
 import com.candidatura.espublico.entities.PeopleEntity;
 import com.candidatura.espublico.entities.StarshipEntity;
-import com.candidatura.espublico.objects.Film;
-import com.candidatura.espublico.objects.People;
-import com.candidatura.espublico.objects.Starship;
+import com.candidatura.espublico.RESTobjects.Film;
+import com.candidatura.espublico.RESTobjects.People;
+import com.candidatura.espublico.RESTobjects.Starship;
 
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class Utils {
