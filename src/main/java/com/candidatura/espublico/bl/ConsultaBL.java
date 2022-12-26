@@ -1,28 +1,18 @@
 package com.candidatura.espublico.bl;
 
 import com.candidatura.espublico.RESTobjects.Film;
-import com.candidatura.espublico.DTO.PeopleDTO;
 import com.candidatura.espublico.RESTobjects.FilmPilotShip;
 import com.candidatura.espublico.RESTobjects.People;
-import com.candidatura.espublico.RESTobjects.Starship;
-import com.candidatura.espublico.entities.PeopleEntity;
 import com.candidatura.espublico.repositories.FilmRepository;
 import com.candidatura.espublico.repositories.PeopleRepository;
 import com.candidatura.espublico.repositories.StarshipRepository;
 import com.candidatura.espublico.utils.Utils;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
