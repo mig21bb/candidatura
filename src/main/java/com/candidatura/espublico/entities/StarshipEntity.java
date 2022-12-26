@@ -102,6 +102,18 @@ public class StarshipEntity {
     @ManyToMany(mappedBy = "ships")
     public List<PeopleEntity> pilots = new ArrayList<>();
 
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
+    @JoinTable(name = "starshipfilm",
+            joinColumns = @JoinColumn(name = "starship_id"),
+            inverseJoinColumns = @JoinColumn(name = "film_id")
+    )
+    @Getter
+    @Setter
+    private List<FilmEntity> films = new ArrayList<>();
+
     public StarshipEntity() {}
     public StarshipEntity(int starshipId) {
         this.starshipId = starshipId;

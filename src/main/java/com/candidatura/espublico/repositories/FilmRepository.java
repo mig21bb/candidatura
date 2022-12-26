@@ -10,4 +10,6 @@ import java.util.List;
 public interface FilmRepository extends CrudRepository<FilmEntity,Integer> {
 
     public List<FilmEntity> findByOrderByEpisodeIdAsc();
+
+    public List<FilmEntity> findByEpisodeIdInOrderByEpisodeIdAsc(Integer[] episodes);
 }

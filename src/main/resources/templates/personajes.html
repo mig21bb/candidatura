@@ -8,7 +8,7 @@
     <h1>listado de personajes</h1>
     <ul >
         <li th:each="people, iter:${personajes}" th:class="${iter.odd}? 'odd'">
-            <p onclick="toggleListado(this);"><span th:text="${people.name}">Nombre del personaje</span>&nbsp;(<span th:text="${#lists.size(people.filmList)}">Apariciones en películas</span>&nbsp;Apariciones)</p>
+            <p onclick="toggleListado(this);" style="hover: pointer"><span th:text="${people.name}">Nombre del personaje</span>&nbsp;(<span th:text="${#lists.size(people.filmList)}">Apariciones en películas</span>&nbsp;Apariciones)</p>
             <ul  style="display:none">
                 <li th:each="film, iter:${people.filmList}" th:class="${iter.odd}? 'odd'" >
                     <span th:text="'Episode'+${film.episode_id}+': '+${film.title}">Título de la película</span>
@@ -20,7 +20,7 @@
     <h1>listado de Películas</h1>
     <ul >
         <li th:each="film, iter:${peliculas}" th:class="${iter.odd}? 'odd'">
-           <input type="checkbox" th:text="'Episode'+${film.episode_id}+': '+${film.title}"/>
+           <input type="checkbox" name="episode" th:value="${film.episode_id}" th:text="'Episode'+${film.episode_id}+': '+${film.title}"/>
         </li>
     </ul>
     <button type="submit">Buscar piloto</button>

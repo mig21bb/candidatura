@@ -66,6 +66,20 @@ public class ConsultaBL {
 
     }
 
+    @Transactional
+    public List<Film> consultaPelis(Integer[] episodes)  {
+
+        List<Film> peliculas=StreamSupport.stream(filmRepository.findByEpisodeIdInOrderByEpisodeIdAsc(episodes).spliterator(), false).map(Film::new).collect(Collectors.toList());
+        return peliculas;
+    }
+
+    @Transactional
+    public List<Film> consultaPilotoNave(Integer[] episodes)  {
+
+        List<Film> peliculas = null;//=StreamSupport.stream(starshipRepository.findById(episodes).spliterator(), false).map(Film::new).collect(Collectors.toList());
+        return peliculas;
+    }
+
     public List<Film> fillCharacterFilms(int people_id){
         List<Film> pelis = StreamSupport.stream(peopleRepository.findById(people_id).get().getFilms().spliterator(), false).map(Film::new).collect(Collectors.toList());
         pelis = pelis.stream()

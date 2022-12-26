@@ -84,21 +84,7 @@ public class CargaBL {
 
     }
 
-    private PeopleEntity cargaPelis(PeopleEntity ent, String[] films) {
-        for(String film: films){
-            Optional<FilmEntity> f = filmRepository.findById(utils.getIdFromUrl(film));
-            ent.getFilms().add(f.get());
-        }
-        return ent;
-    }
 
-    private PeopleEntity cargaShips(PeopleEntity ent, String[] ships) {
-        for(String ship: ships){
-            Optional<StarshipEntity> s = starshipRepository.findById(utils.getIdFromUrl(ship));
-            ent.getShips().add(s.get());
-        }
-        return ent;
-    }
 
     @Transactional
     public List<Film> cargarFilms(String uri) throws JsonProcessingException {
@@ -146,6 +132,7 @@ public class CargaBL {
             next = root.path("next");
             array = root.path("results");
             Starship s = new Starship();
+            StarshipEntity ent = new StarshipEntity();
             if(array.isArray()){
                 for(JsonNode node: array){
                     String MGLT = "";
@@ -156,7 +143,9 @@ public class CargaBL {
                     }
                     s = mapper.treeToValue(node, Starship.class);
                     s.setMGLT(MGLT);
-                    starshipRepository.save(utils.fillStarshipEntity(s));
+                    ent = utils.fillStarshipEntity(s);
+                    this.cargaStarshipFilms(ent, s.getFilms());
+                    starshipRepository.save(ent);
                     ships.add(s);
                 }
             }
@@ -167,6 +156,29 @@ public class CargaBL {
 
         return ships;
 
+    }
+
+    private PeopleEntity cargaPelis(PeopleEntity ent, String[] films) {
+        for(String film: films){
+            Optional<FilmEntity> f = filmRepository.findById(utils.getIdFromUrl(film));
+            ent.getFilms().add(f.get());
+        }
+        return ent;
+    }
+
+    private PeopleEntity cargaShips(PeopleEntity ent, String[] ships) {
+        for(String ship: ships){
+            Optional<StarshipEntity> s = starshipRepository.findById(utils.getIdFromUrl(ship));
+            ent.getShips().add(s.get());
+        }
+        return ent;
+    }
+    private StarshipEntity cargaStarshipFilms(StarshipEntity ent, String[] films) {
+        for(String film: films){
+            Optional<FilmEntity> f = filmRepository.findById(utils.getIdFromUrl(film));
+            ent.getFilms().add(f.get());
+        }
+        return ent;
     }
 
     @Transactional

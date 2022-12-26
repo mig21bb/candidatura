@@ -1,5 +1,6 @@
 package com.candidatura.espublico.controller;
 
+import com.candidatura.espublico.RESTobjects.Film;
 import com.candidatura.espublico.bl.CargaBL;
 import com.candidatura.espublico.bl.ConsultaBL;
 import com.candidatura.espublico.RESTobjects.People;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +50,6 @@ public class StarWarsController {
 
     @GetMapping("/listarPersonajes")
     public String listarPersonajes( Model model) {
-        List<People> characters = new ArrayList<>();
 
         model.addAttribute("personajes", consultaBL.consultaPeople());
         model.addAttribute("peliculas", consultaBL.consultaPelis());
@@ -57,8 +58,9 @@ public class StarWarsController {
     }
 
     @GetMapping("/buscarPiloto")
-    public String listarPersonajes(String[] pelis, Model model) {
-        List<People> characters = new ArrayList<>();
+    public String listarPersonajes(@RequestParam(name="episode", required=false)Integer[] episodes, Model model) {
+
+        List<Film> pelis = consultaBL.consultaPelis(episodes);
 
         model.addAttribute("personajes", consultaBL.consultaPeople());
         model.addAttribute("peliculas", consultaBL.consultaPelis());

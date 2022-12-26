@@ -7,4 +7,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PeopleRepository extends CrudRepository<PeopleEntity,Integer> {
+
+   /* @Query(value = "SELECT ", nativeQuery = true)
+    public PeopleEntity*/
 }

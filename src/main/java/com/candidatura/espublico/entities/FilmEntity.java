@@ -66,6 +66,9 @@ public class FilmEntity {
     @ManyToMany(mappedBy = "films")
     public List<PeopleEntity> characters = new ArrayList<>();
 
+    @ManyToMany(mappedBy = "films")
+    public List<StarshipEntity> ships = new ArrayList<>();
+
     public FilmEntity() {}
     public FilmEntity(int filmId) {
         this.filmId = filmId;
