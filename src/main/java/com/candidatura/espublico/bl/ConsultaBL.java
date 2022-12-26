@@ -60,94 +60,17 @@ public class ConsultaBL {
     @Transactional
     public List<Film> consultaPelis()  {
 
-        List<Film> peliculas=StreamSupport.stream(filmRepository.findAll().spliterator(), false).map(Film::new).collect(Collectors.toList());
+        List<Film> peliculas=StreamSupport.stream(filmRepository.findByOrderByEpisodeIdAsc().spliterator(), false).map(Film::new).collect(Collectors.toList());
 
         return peliculas;
 
     }
 
-
-
-    @Transactional
-    public List<Film> cargarFilms(String uri) throws JsonProcessingException {
-        RestTemplate restTemplate = new RestTemplate();
-        List<Film> films = new ArrayList<>();
-
-        JsonNode root ;
-        JsonNode next ;
-        JsonNode array ;
-        do{
-            ResponseEntity<String> response = restTemplate.getForEntity(uri, String.class);
-            ObjectMapper mapper = new ObjectMapper();
-            root = mapper.readTree(response.getBody());
-            next = root.path("next");
-            array = root.path("results");
-            Film f = new Film();
-            if(array.isArray()){
-                for(JsonNode node: array){
-                    f = mapper.treeToValue(node, Film.class);
-                    filmRepository.save(utils.fillFilmEntity(f));
-                    films.add(f);
-                }
-            }
-            uri=next.asText();
-        }while(!next.isNull());
-
-            log.debug("films cargados: "+films.size());
-
-        return films;
-
-    }
-
-    @Transactional
-    public List<Starship> cargarShips(String uri) throws JsonProcessingException {
-        RestTemplate restTemplate = new RestTemplate();
-        List<Starship> ships = new ArrayList<>();
-
-        JsonNode root ;
-        JsonNode next ;
-        JsonNode array ;
-        do{
-            ResponseEntity<String> response = restTemplate.getForEntity(uri, String.class);
-            ObjectMapper mapper = new ObjectMapper();
-            root = mapper.readTree(response.getBody());
-            next = root.path("next");
-            array = root.path("results");
-            Starship s = new Starship();
-            if(array.isArray()){
-                for(JsonNode node: array){
-                    String MGLT = "";
-                    if (node instanceof ObjectNode){
-                        ObjectNode object = (ObjectNode) node;
-                        MGLT = object.findValue("MGLT").textValue();
-                        object.remove("MGLT");
-                    }
-                    s = mapper.treeToValue(node, Starship.class);
-                    s.setMGLT(MGLT);
-                    starshipRepository.save(utils.fillStarshipEntity(s));
-                    ships.add(s);
-                }
-            }
-            uri=next.asText();
-        }while(!next.isNull());
-
-        log.debug("films cargados: "+ships.size());
-
-        return ships;
-
-    }
-
-    @Transactional
-    public boolean deleteDataBase(){
-        filmRepository.deleteAll();
-        starshipRepository.deleteAll();
-        peopleRepository.deleteAll();
-        return true;
-    }
-
     public List<Film> fillCharacterFilms(int people_id){
-        List<Film> pelis = new ArrayList<>();
-        pelis = StreamSupport.stream(peopleRepository.findById(people_id).get().getFilms().spliterator(), false).map(Film::new).collect(Collectors.toList());
+        List<Film> pelis = StreamSupport.stream(peopleRepository.findById(people_id).get().getFilms().spliterator(), false).map(Film::new).collect(Collectors.toList());
+        pelis = pelis.stream()
+                .sorted((o1, o2)->o1.getEpisode_id().compareTo(o2.getEpisode_id()))
+                .collect(Collectors.toList());
         return pelis;
     }
 

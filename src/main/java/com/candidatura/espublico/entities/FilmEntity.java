@@ -16,12 +16,12 @@ public class FilmEntity {
     @Getter
     @Setter
     @Column(name="film_id")
-    int filmId;
+    Integer filmId;
 
     @Getter
     @Setter
     @Column(name="episode_id")
-    int episodeId;
+    Integer episodeId;
 
     @Getter
     @Setter

@@ -55,4 +55,14 @@ public class StarWarsController {
 
         return "personajes";
     }
+
+    @GetMapping("/buscarPiloto")
+    public String listarPersonajes(String[] pelis, Model model) {
+        List<People> characters = new ArrayList<>();
+
+        model.addAttribute("personajes", consultaBL.consultaPeople());
+        model.addAttribute("peliculas", consultaBL.consultaPelis());
+
+        return "personajes";
+    }
 }
