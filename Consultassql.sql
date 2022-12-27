@@ -36,7 +36,7 @@ order by apariciones desc, sf.starship_id asc
 
  ;
  
- select f.title, p.name, s.name
+ select f.title as title, p.name as pilotName, s.name as shipName
  from people p
  inner join characters c on p.people_id=c.people_id
  inner join films f on f.film_id=c.film_id

@@ -183,6 +183,7 @@ public class CargaBL {
 
     @Transactional
     public boolean deleteDataBase(){
+        log.debug("Vaciando los elementos de las tablas");
         filmRepository.deleteAll();
         starshipRepository.deleteAll();
         peopleRepository.deleteAll();

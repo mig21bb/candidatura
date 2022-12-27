@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Carga de ficheros de pedidos</h1>
+    <form action="/pedidos/cargar" method="post">
+        <div>
+            <label for="file">Fichero de datos </label>
+                <input type="file" id="file" name="file" />
+
+        </div>
+        <div>
+            <label for="ruta">Ruta local del fichero de datos </label>
+                <input type="text" id="ruta" name="ruta" value=""/>
+
+        </div>
+        <div>
+
+            <input type="submit" value="Cargar"/>
+
+        </div>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<<<<<<< HEAD
+<h1>Star Wars REST API -> Base de datos relacional</h1>
+<div th:if="${message}">
+    <h3 th:text="${message}">Mensaje de aviso tras las acciones</h3>
+</div>
+<div th:if="${not #lists.isEmpty(pilotoNave)}">
+    <h2><a href="/sw/vaciarBBDD">Vaciar base de datos relacional</a></h2>
+</div>
+<div th:if="${#lists.isEmpty(pilotoNave)}">
+    <h3 >No se han encontrado películas. La base de datos relacional está vacía.</h3>
+    <h2><a href="/sw/cargarBBDD">Cargar datos en la base de datos relacional</a></h2>
+</div>
+<form action="/sw/buscarPiloto">
+    <h1>listado de Películas</h1>
+    <ul >
+        <li th:each="film, iter:${peliculas}" th:class="${iter.odd}? 'odd'">
+            <input type="checkbox" name="episode" th:value="${film.episode_id}" th:text="'Episode'+${film.episode_id}+': '+${film.title}"/>
+        </li>
+    </ul>
+    <button type="submit">Buscar piloto</button>
+</form>
+<div th:if="${not #lists.isEmpty(pilotoNave)}">
+=======
+    <h1>Star Wars REST API -> Base de datos relacional</h1>
+    <div th:if="${message}">
+        <h3 th:text="${message}">Mensaje de aviso tras las acciones</h3>
+    </div>
+    <div th:if="${not #lists.isEmpty(pilotoNave)}">
+        <h2><a href="/sw/vaciarBBDD">Vaciar base de datos relacional</a></h2>
+    </div>
+    <div th:if="${#lists.isEmpty(pilotoNave)}">
+        <h3 >No se han encontrado películas. La base de datos relacional está vacía.</h3>
+        <h2><a href="/sw/cargarBBDD">Cargar datos en la base de datos relacional</a></h2>
+    </div>
+    <form action="/sw/buscarPiloto">
+    <h1>listado de Películas</h1>
+    <ul >
+        <li th:each="film, iter:${peliculas}" th:class="${iter.odd}? 'odd'">
+           <input type="checkbox" name="episode" th:value="${film.episode_id}" th:text="'Episode'+${film.episode_id}+': '+${film.title}"/>
+        </li>
+    </ul>
+    <button type="submit">Buscar piloto</button>
+    </form>
+    <div th:if="${not #lists.isEmpty(pilotoNave)}">
+>>>>>>> a3971c3 (Diagrama de datos y nuevos html)
+    <h1 th:text="${pilotoNave[0].shipName}">La nave del misterio</h1>
+    <ul >
+        <li th:each="fps, iter:${pilotoNave}" th:class="${iter.odd}? 'odd'">
+            <p>En <span th:text="${fps.title}">pelicula</span> la pilotaba <span th:text="${fps.pilotName}">este piloto</span></p>
+        </li>
+    </ul>
+<<<<<<< HEAD
+</div>
+=======
+    </div>
+>>>>>>> a3971c3 (Diagrama de datos y nuevos html)
+</body>
+</html>

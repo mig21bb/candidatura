@@ -11,7 +11,12 @@ public class EspublicoApplication {
 	private static final Logger log = LoggerFactory.getLogger(EspublicoApplication.class);
 
 	public static void main(String[] args) {
+		log.debug("----------------------Inicializando la aplicación----------------------------");
+		log.debug("-Dbbdduser="+System.getenv("bbdduser"));
+		log.debug("-Dbbddpassword="+System.getenv("bbddpassword"));
+
 		SpringApplication.run(EspublicoApplication.class, args);
+
 	}
 
 }
