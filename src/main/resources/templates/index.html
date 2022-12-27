@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Candidatura de Miguel Ángel Buñuales empleo en esPublico</h1>
+    Este es el resultado de la prueba técnica requerida para mi candidatura laboral en esPublico.
+    
+    La arquitectura de la aplicación está basada en spring 3.0, empleando las herramientas de spring boot para que se ejecute la aplicación en 
+    un servidor ligero y poder disponer también de la posibilidad de servir contenido html a través del framework MVC de thymeleaf y por último
+    una capa de 
+    
+    Se ha empleado una BBDD MariaDB alojada en un servicio 
+    de Amazon Web Services para poder acceder a ella por mí o por cualquier otra persona para su evaluación. 
+    <h2 >Carga de ficheros</h2>
+    <ul th:each="character, iter:${film.characters}" th:class="${iter.odd}? 'odd'">
+        <li th:text="${character}"></li>
+    </ul>
+    <h2 >REST Star wars</h2>
+    El objetivo era crear una estructura de BBDD para los objetos Film, People y Starship. 
+    <a href="">Cargar datos rest en la BBDD</a>
+</body>
+</html>
