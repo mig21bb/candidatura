@@ -12,7 +12,7 @@ public class EspublicoApplication {
 
 	public static void main(String[] args) {
 		log.debug("----------------------Inicializando la aplicación----------------------------");
-		log.debug("-Dbbdduser="+System.getenv("bbdduser"));
+		log.debug("-Dbbddusername="+System.getenv("bbddusername"));
 		log.debug("-Dbbddpassword="+System.getenv("bbddpassword"));
 
 		SpringApplication.run(EspublicoApplication.class, args);

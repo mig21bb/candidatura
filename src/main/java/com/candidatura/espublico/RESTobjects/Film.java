@@ -24,6 +24,8 @@ public class Film {
 
     private String[] species;
 
+    private boolean checked;
+
     public Film() {}
     
     public Film(FilmEntity ent){

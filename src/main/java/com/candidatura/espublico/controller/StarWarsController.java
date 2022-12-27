@@ -1,5 +1,6 @@
 package com.candidatura.espublico.controller;
 
+import com.candidatura.espublico.RESTobjects.Film;
 import com.candidatura.espublico.bl.CargaBL;
 import com.candidatura.espublico.bl.ConsultaBL;
 import org.slf4j.Logger;
@@ -10,6 +11,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.thymeleaf.util.ArrayUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping(value = "/sw/")
@@ -52,9 +57,11 @@ public class StarWarsController {
         cargaBL.deleteDataBase();
         log.debug("Una vez vacía la BBDD se van cargando los distintos elementos");
         String uri="https://swapi.py4e.com/api/films/";
+        List<Film> pelis = new ArrayList<>();
         StringBuilder mensaje = new StringBuilder("Se han cargado los siguientes datos en la BBDD: ");
         try{
-            mensaje.append(cargaBL.cargarFilms(uri).size()+" registros de películas,");
+            pelis = cargaBL.cargarFilms(uri);
+            mensaje.append(pelis.size()+" registros de películas, ");
             uri="https://swapi.py4e.com/api/starships/";
             mensaje.append(cargaBL.cargarShips(uri).size()+"registros de naves y ");
             uri="https://swapi.py4e.com/api/people/";
@@ -64,6 +71,7 @@ public class StarWarsController {
             log.error(e.getMessage());
             e.printStackTrace();
         }
+        model.addAttribute("peliculas",pelis);
         model.addAttribute("message",mensaje);
 
         return "swindex";
@@ -74,17 +82,17 @@ public class StarWarsController {
 
         model.addAttribute("personajes", consultaBL.consultaPeople());
 
-
         return "personajes";
     }
 
     @GetMapping("/buscarPiloto")
     public String listarPersonajes(@RequestParam(name="episode", required=false)String[] episodes, Model model) {
 
-        model.addAttribute("personajes", consultaBL.consultaPeople());
-        model.addAttribute("peliculas", consultaBL.consultaPelis());
+        List<Film> pelis = consultaBL.consultaPelis();
+        pelis.stream().forEach(p-> {p.setChecked(ArrayUtils.contains(episodes, p.getEpisode_id().toString()));});
+        model.addAttribute("peliculas", pelis);
         model.addAttribute("pilotoNave", consultaBL.consultaPilotoNave(episodes));
 
-        return "personajes";
+        return "swindex";
     }
 }

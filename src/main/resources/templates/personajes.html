@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <body>
+    <a href="/sw/">Volver</a>
     <h1>listado de personajes</h1>
     <ul >
         <li th:each="people, iter:${personajes}" th:class="${iter.odd}? 'odd'">
@@ -16,22 +17,8 @@
             </ul>
         </li>
     </ul>
-    <form action="/buscarPiloto">
-    <h1>listado de Películas</h1>
-    <ul >
-        <li th:each="film, iter:${peliculas}" th:class="${iter.odd}? 'odd'">
-           <input type="checkbox" name="episode" th:value="${film.episode_id}" th:text="'Episode'+${film.episode_id}+': '+${film.title}"/>
-        </li>
-    </ul>
-    <button type="submit">Buscar piloto</button>
-    </form>
-    <div th:if="${not #lists.isEmpty(pilotoNave)}">
-    <h1 th:text="${pilotoNave[0].shipName}">La nave del misterio</h1>
-    <ul >
-        <li th:each="fps, iter:${pilotoNave}" th:class="${iter.odd}? 'odd'">
-            <p>En <span th:text="${fps.title}">pelicula</span> la pilotaba <span th:text="${fps.pilotName}">este piloto</span></p>
-        </li>
-    </ul>
+
+    <a href="/sw/">Volver</a>
 <script>
     function toggleListado(element){
         var node = element.nextSibling.nextSibling;
