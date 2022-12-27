@@ -1,0 +1,121 @@
+2022-12-28T00:02:43.111+01:00  INFO 17924 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-28T00:02:43.124+01:00  INFO 17924 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-28T00:02:43.277+01:00  INFO 17924 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-28T00:02:46.537+01:00  INFO 24308 --- [restartedMain] c.c.espublico.EspublicoApplication       : Starting EspublicoApplication using Java 17.0.5 with PID 24308 (C:\Users\34697\Documents\Mis Proyectos\candidaturaespublico\espublico\candidatura\target\classes started by 34697 in C:\Users\34697\Documents\Mis Proyectos\candidaturaespublico\espublico\candidatura)
+2022-12-28T00:02:46.540+01:00  INFO 24308 --- [restartedMain] c.c.espublico.EspublicoApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-12-28T00:02:46.624+01:00  INFO 24308 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-28T00:02:46.624+01:00  INFO 24308 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-28T00:02:47.667+01:00  INFO 24308 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-28T00:02:47.760+01:00  INFO 24308 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79 ms. Found 3 JPA repository interfaces.
+2022-12-28T00:02:48.873+01:00  INFO 24308 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-28T00:02:48.889+01:00  INFO 24308 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-28T00:02:48.890+01:00  INFO 24308 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.1]
+2022-12-28T00:02:48.976+01:00  INFO 24308 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-28T00:02:48.977+01:00  INFO 24308 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2352 ms
+2022-12-28T00:02:49.176+01:00  INFO 24308 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-28T00:02:49.437+01:00  INFO 24308 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@1e25f3f8
+2022-12-28T00:02:49.441+01:00  INFO 24308 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-28T00:02:49.518+01:00  INFO 24308 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-28T00:02:49.597+01:00  INFO 24308 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.5.Final
+2022-12-28T00:02:49.843+01:00  WARN 24308 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2022-12-28T00:02:50.108+01:00  INFO 24308 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2022-12-28T00:02:51.401+01:00  INFO 24308 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-28T00:02:51.417+01:00  INFO 24308 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-28T00:02:52.144+01:00  WARN 24308 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-28T00:02:52.616+01:00  INFO 24308 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-12-28T00:02:52.993+01:00  INFO 24308 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-28T00:02:53.037+01:00  INFO 24308 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-28T00:02:53.048+01:00  INFO 24308 --- [restartedMain] c.c.espublico.EspublicoApplication       : Started EspublicoApplication in 7.153 seconds (process running for 7.915)
+2022-12-28T00:02:53.740+01:00  INFO 24308 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-28T00:02:53.740+01:00  INFO 24308 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-28T00:02:53.741+01:00  INFO 24308 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-12-28T00:07:09.823+01:00  INFO 24308 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-28T00:07:09.828+01:00  INFO 24308 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-28T00:07:09.976+01:00  INFO 24308 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-28T00:07:13.023+01:00  INFO 23640 --- [restartedMain] c.c.espublico.EspublicoApplication       : Starting EspublicoApplication using Java 17.0.5 with PID 23640 (C:\Users\34697\Documents\Mis Proyectos\candidaturaespublico\espublico\candidatura\target\classes started by 34697 in C:\Users\34697\Documents\Mis Proyectos\candidaturaespublico\espublico\candidatura)
+2022-12-28T00:07:13.025+01:00  INFO 23640 --- [restartedMain] c.c.espublico.EspublicoApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-12-28T00:07:13.099+01:00  INFO 23640 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-28T00:07:13.100+01:00  INFO 23640 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-28T00:07:14.110+01:00  INFO 23640 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-28T00:07:14.202+01:00  INFO 23640 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79 ms. Found 3 JPA repository interfaces.
+2022-12-28T00:07:15.250+01:00  INFO 23640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-28T00:07:15.267+01:00  INFO 23640 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-28T00:07:15.268+01:00  INFO 23640 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.1]
+2022-12-28T00:07:15.360+01:00  INFO 23640 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-28T00:07:15.361+01:00  INFO 23640 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2261 ms
+2022-12-28T00:07:15.549+01:00  INFO 23640 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-28T00:07:15.835+01:00  INFO 23640 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@44a9bc80
+2022-12-28T00:07:15.839+01:00  INFO 23640 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-28T00:07:15.930+01:00  INFO 23640 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-28T00:07:16.039+01:00  INFO 23640 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.5.Final
+2022-12-28T00:07:16.275+01:00  WARN 23640 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2022-12-28T00:07:16.523+01:00  INFO 23640 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2022-12-28T00:07:17.643+01:00  INFO 23640 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-28T00:07:17.655+01:00  INFO 23640 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-28T00:07:18.329+01:00  WARN 23640 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-28T00:07:18.756+01:00  INFO 23640 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-12-28T00:07:19.124+01:00  INFO 23640 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-28T00:07:19.166+01:00  INFO 23640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-28T00:07:19.178+01:00  INFO 23640 --- [restartedMain] c.c.espublico.EspublicoApplication       : Started EspublicoApplication in 6.744 seconds (process running for 7.504)
+2022-12-28T00:07:27.025+01:00  INFO 23640 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-28T00:07:27.025+01:00  INFO 23640 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-28T00:07:27.027+01:00  INFO 23640 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-12-28T00:07:52.946+01:00  INFO 23640 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-28T00:07:52.950+01:00  INFO 23640 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-28T00:07:53.103+01:00  INFO 23640 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-28T00:07:56.220+01:00  INFO 19112 --- [restartedMain] c.c.espublico.EspublicoApplication       : Starting EspublicoApplication using Java 17.0.5 with PID 19112 (C:\Users\34697\Documents\Mis Proyectos\candidaturaespublico\espublico\candidatura\target\classes started by 34697 in C:\Users\34697\Documents\Mis Proyectos\candidaturaespublico\espublico\candidatura)
+2022-12-28T00:07:56.223+01:00  INFO 19112 --- [restartedMain] c.c.espublico.EspublicoApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-12-28T00:07:56.308+01:00  INFO 19112 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-28T00:07:56.308+01:00  INFO 19112 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-28T00:07:57.313+01:00  INFO 19112 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-28T00:07:57.403+01:00  INFO 19112 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 3 JPA repository interfaces.
+2022-12-28T00:07:58.512+01:00  INFO 19112 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-28T00:07:58.527+01:00  INFO 19112 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-28T00:07:58.528+01:00  INFO 19112 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.1]
+2022-12-28T00:07:58.614+01:00  INFO 19112 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-28T00:07:58.615+01:00  INFO 19112 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2306 ms
+2022-12-28T00:07:58.806+01:00  INFO 19112 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-28T00:07:59.081+01:00  INFO 19112 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@4b638e41
+2022-12-28T00:07:59.083+01:00  INFO 19112 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-28T00:07:59.158+01:00  INFO 19112 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-28T00:07:59.253+01:00  INFO 19112 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.5.Final
+2022-12-28T00:07:59.508+01:00  WARN 19112 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2022-12-28T00:07:59.796+01:00  INFO 19112 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2022-12-28T00:08:00.952+01:00  INFO 19112 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-28T00:08:00.962+01:00  INFO 19112 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-28T00:08:01.648+01:00  WARN 19112 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-28T00:08:02.129+01:00  INFO 19112 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-12-28T00:08:02.557+01:00  INFO 19112 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-28T00:08:02.604+01:00  INFO 19112 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-28T00:08:02.617+01:00  INFO 19112 --- [restartedMain] c.c.espublico.EspublicoApplication       : Started EspublicoApplication in 6.99 seconds (process running for 7.835)
+2022-12-28T00:09:31.513+01:00  INFO 19112 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-28T00:09:31.517+01:00  INFO 19112 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-28T00:09:31.661+01:00  INFO 19112 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-28T00:09:34.835+01:00  INFO 21132 --- [restartedMain] c.c.espublico.EspublicoApplication       : Starting EspublicoApplication using Java 17.0.5 with PID 21132 (C:\Users\34697\Documents\Mis Proyectos\candidaturaespublico\espublico\candidatura\target\classes started by 34697 in C:\Users\34697\Documents\Mis Proyectos\candidaturaespublico\espublico\candidatura)
+2022-12-28T00:09:34.838+01:00  INFO 21132 --- [restartedMain] c.c.espublico.EspublicoApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-12-28T00:09:34.924+01:00  INFO 21132 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-28T00:09:34.924+01:00  INFO 21132 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-28T00:09:36.033+01:00  INFO 21132 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-28T00:09:36.141+01:00  INFO 21132 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92 ms. Found 3 JPA repository interfaces.
+2022-12-28T00:09:37.224+01:00  INFO 21132 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-28T00:09:37.240+01:00  INFO 21132 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-28T00:09:37.240+01:00  INFO 21132 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.1]
+2022-12-28T00:09:37.335+01:00  INFO 21132 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-28T00:09:37.336+01:00  INFO 21132 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2410 ms
+2022-12-28T00:09:37.538+01:00  INFO 21132 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-28T00:09:37.811+01:00  INFO 21132 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@44a9bc80
+2022-12-28T00:09:37.819+01:00  INFO 21132 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-28T00:09:37.920+01:00  INFO 21132 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-28T00:09:37.998+01:00  INFO 21132 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.5.Final
+2022-12-28T00:09:38.260+01:00  WARN 21132 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2022-12-28T00:09:38.530+01:00  INFO 21132 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2022-12-28T00:09:39.778+01:00  INFO 21132 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-28T00:09:39.789+01:00  INFO 21132 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-28T00:09:40.661+01:00  WARN 21132 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-28T00:09:41.182+01:00  INFO 21132 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-12-28T00:09:41.562+01:00  INFO 21132 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-28T00:09:41.609+01:00  INFO 21132 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-28T00:09:41.625+01:00  INFO 21132 --- [restartedMain] c.c.espublico.EspublicoApplication       : Started EspublicoApplication in 7.562 seconds (process running for 8.381)
+2022-12-28T00:09:43.818+01:00  INFO 21132 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-28T00:09:43.819+01:00  INFO 21132 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-28T00:09:43.820+01:00  INFO 21132 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
