@@ -10,3 +10,7 @@ la capa de persistencia de spring 3.0 basada en Hibernate para conectar con la B
   Comando para crear el .jar : MVNW clean -Dbbddusername=esuser -Dbbddpassword=esPublico clean install
     
   Comando ejecutar el .jar y arrancar la aplicación :   java -Dbbddusername=esuser -Dbbddpassword=esPublico -jar espublico-0.0.1-SNAPSHOT.jar
+  
+  Una vez arrancada la aplicación se podrá acceder a ella en el navegador en la ruta http://localhost:8080/
+  
+  El esquema de la BBDD de starwars sería este:
