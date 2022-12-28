@@ -14,4 +14,4 @@ la capa de persistencia de spring 3.0 basada en Hibernate para conectar con la B
   Una vez arrancada la aplicación se podrá acceder a ella en el navegador en la ruta http://localhost:8080/
   
   El esquema de la BBDD de starwars sería este:
-  ![Diagrama de datos](https://raw.githubusercontent.com/mig21bb/candidatura/main/esquemaDeDatos.png?token=GHSAT0AAAAAAB4PZ7S5EBRKMXG2OC64N6JAY5MS4MQ)
+  ![Diagrama de datos](https://raw.githubusercontent.com/mig21bb/candidatura/main/esquemaDeDatos.png)
