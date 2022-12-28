@@ -6,23 +6,46 @@
 </head>
 <body>
     <h1>Carga de ficheros de pedidos</h1>
+    <div th:if="${mensaje}">
+        <h3 th:text="${mensaje}">Mensaje de aviso tras las acciones</h3>
+    </div>
     <form action="/pedidos/cargar" method="post">
         <div>
-            <label for="file">Fichero de datos </label>
-                <input type="file" id="file" name="file" />
-
-        </div>
-        <div>
             <label for="ruta">Ruta local del fichero de datos </label>
-                <input type="text" id="ruta" name="ruta" value=""/>
-
+            <input type="text" id="ruta" name="ruta" th:value="${ruta}"/>
         </div>
         <div>
-
             <input type="submit" value="Cargar"/>
-
         </div>
-
     </form>
+    <div th:if="${rutaDestino}">
+        <h3 th:text="'Se ha generado un nuevo fichero aquí: '+${rutaDestino}">Mensaje de aviso con la ruta del fichero generado></h3>
+    </div>
+    <div th:if="${resumen}">
+        <h3>Resumen de los pedidos almacenados en la Base de Datos</h3>
+        <ul >
+            <li th:each="lista, cont:${resumen}">
+                <p onclick="toggleListado(this);" style="cursor: pointer"><span th:text="${lista[0].campo}">Nombre del campo</span></p>
+                <table >
+                    <tbody>
+                    <tr th:each="field, iter:${lista}" th:class="${iter.odd}? 'odd'" >
+                        <td th:text="${iter.isFirst}?'Total':${field.campo}">campo</td>
+                        <td th:text="${field.recuento}">recuento</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </li>
+        </ul>
+    </div>
+    <script>
+    function toggleListado(element){
+        var node = element.nextSibling.nextSibling;
+        if (node.style.display === "none") {
+            node.style.display = "block";
+        } else {
+            node.style.display = "none";
+        }
+    }
+</script>
 </body>
 </html>

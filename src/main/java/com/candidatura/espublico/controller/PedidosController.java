@@ -1,16 +1,17 @@
 package com.candidatura.espublico.controller;
 
+import com.candidatura.espublico.DTO.ResumenDTO;
+import com.candidatura.espublico.bl.PedidosBL;
 import com.candidatura.espublico.entities.PedidoEntity;
 import com.candidatura.espublico.repositories.PedidoRepository;
+import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
@@ -24,15 +25,9 @@ public class PedidosController {
 
     private static final Logger log = LoggerFactory.getLogger(PedidosController.class);
 
-    public static final String delimiter = ",";
+
     @Autowired
-    PedidoRepository pedidoRepository;
-
-
-
-    public PedidosController(PedidoRepository pedidoRepository) {
-        this.pedidoRepository = pedidoRepository;
-    }
+    PedidosBL pedidosBL;
 
     @GetMapping("/")
 	public String pedidos() {
@@ -40,52 +35,73 @@ public class PedidosController {
         return "pedidos";
     }
 
-	@PostMapping("/cargar")
-    public String uploadFile(@RequestParam(name="file", required=false) MultipartFile file,@RequestParam(name="ruta", required=false) String ruta, Model model) {
-        log.debug("Cargando fichero o ruta del fichero");
+	@PostMapping(value="/cargar")
+    public String uploadFile(@RequestParam(name="ruta", required=true) String ruta, Model model) {
+        log.debug("Cargando ruta del fichero");
         // check if file is empty
-            BufferedReader br;
-            List<PedidoEntity> entityList= new ArrayList<>();
-            if(file!=null){
-                try{
-                    if (file.isEmpty()) {
-                        model.addAttribute("message", "Please select a file to upload.");
-                        return "pedidos";
-                    }
-                    List<String> result = new ArrayList<>();
-                    String line;
-                    InputStream is = file.getInputStream();
-                    br = new BufferedReader(new InputStreamReader(is));
-                    while ((line = br.readLine()) != null) {
-                        result.add(line);
-                    }
+        String mensaje="";
+        File pedidosOrdenados = null;
+        model.addAttribute("ruta",ruta);
+        if(ruta!=null && !ruta.equals("")){
+            try {
 
-                    model.addAttribute("ruta", file.getName());
-                } catch(Exception ioe) {
-                    ioe.printStackTrace();
-                }
-            }else if(ruta!=null && !ruta.equals("")){
-                try {
-                    File pedidos = new File(ruta);
-                    FileReader fr = new FileReader(pedidos);
-                    br = new BufferedReader(fr);
-                    String line = "";
-                    String[] tempArr;
-                    br.readLine();
-                    while((line = br.readLine()) != null) {
-                        tempArr = line.split(delimiter);
-                        entityList.add(new PedidoEntity(tempArr));
+                File pedidos = new File(ruta);
+                pedidosBL.cargarPedidos(pedidos);
 
-                        System.out.println();
-                    }
-                    br.close();
-                    pedidoRepository.saveAll(entityList);
-                } catch(IOException ioe) {
-                    ioe.printStackTrace();
-                }
+            } catch(IOException e) {
+                mensaje="Error cargando el fichero en la ruta especificada";
+                model.addAttribute("mensaje",mensaje);
+                log.debug(mensaje+e.getMessage());
+                log.error(e.getMessage());
+                e.printStackTrace();
+                return "pedidos";
+            } catch(Exception e){
+                mensaje="Error cargando el los pedidos";
+                model.addAttribute("mensaje",mensaje);
+                log.debug(mensaje+e.getMessage());
+                log.error(e.getMessage());
+                e.printStackTrace();
+                return "pedidos";
+            }
+            log.debug("Generación de archivo con los registros ordenados.");
+            try{
+                pedidosOrdenados = pedidosBL.ordenarPedidos(pedidosOrdenados);
+            } catch(IOException e) {
+                mensaje="Error generando nuevo archivo.";
+                model.addAttribute("mensaje",mensaje);
+                log.debug(mensaje+e.getMessage());
+                log.error(e.getMessage());
+                e.printStackTrace();
+                return "pedidos";
+            } catch(Exception e){
+                mensaje="Error generando nuevo archivo.";
+                model.addAttribute("mensaje",mensaje);
+                log.debug(mensaje+e.getMessage());
+                log.error(e.getMessage());
+                e.printStackTrace();
+                return "pedidos";
+            }
+            if(pedidosOrdenados!=null){
+                model.addAttribute("rutaDestino",pedidosOrdenados.getPath());
+            }
+            try {
+                log.debug("Consultas para el resumen");
+                List<List<ResumenDTO>> resumen = pedidosBL.consultarResumenPedidos();
+                model.addAttribute("resumen",resumen);
+            }catch (Exception e){
+                mensaje="Error generando el resumen.";
+                model.addAttribute("mensaje",mensaje);
+                log.debug(mensaje+e.getMessage());
+                log.error(e.getMessage());
+                e.printStackTrace();
+                return "pedidos";
             }
 
 
-       return "pedidos";
+        }
+        model.addAttribute("mensaje","Éxito en la importación.");
+        return "pedidos";
 	}
+
+
 }

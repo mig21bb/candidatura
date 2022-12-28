@@ -1,19 +1,22 @@
 package com.candidatura.espublico.utils;
 
-import com.candidatura.espublico.entities.FilmEntity;
-import com.candidatura.espublico.entities.PeopleEntity;
-import com.candidatura.espublico.entities.StarshipEntity;
 import com.candidatura.espublico.RESTobjects.Film;
 import com.candidatura.espublico.RESTobjects.People;
 import com.candidatura.espublico.RESTobjects.Starship;
-
+import com.candidatura.espublico.entities.FilmEntity;
+import com.candidatura.espublico.entities.PeopleEntity;
+import com.candidatura.espublico.entities.StarshipEntity;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Component
 public class Utils {
+
+	private static DateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
 
     /**
      * Rellena una entidad FilmEntity con el objeto Film
@@ -87,6 +90,19 @@ public class Utils {
 		
 		return starshipEntity;
 	}
+
+	public static String formatDate(Date fecha){
+		return formatter.format(fecha);
+	}
+
+	public static Date parseDate(String fecha){
+		try {
+			return formatter.parse(fecha);
+		} catch (ParseException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
 
 
 }

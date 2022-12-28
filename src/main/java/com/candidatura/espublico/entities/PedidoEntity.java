@@ -1,9 +1,9 @@
 package com.candidatura.espublico.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.candidatura.espublico.DTO.ResumenDTO;
+import com.candidatura.espublico.RESTobjects.FilmPilotShip;
+import com.candidatura.espublico.utils.Utils;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,6 +12,41 @@ import java.util.Date;
 
 @Entity
 @Table(name="pedidos")
+@NamedNativeQuery(
+        name = "recuentoPorRegion",
+        query ="select region as campo,count(*)  as recuento from pedidos group by region order by recuento desc",
+        resultSetMapping = "resumenDTO"
+)
+@NamedNativeQuery(
+        name = "recuentoPorPais",
+        query ="select country as campo,count(*)  as recuento from pedidos group by country order by recuento desc",
+        resultSetMapping = "resumenDTO"
+)
+@NamedNativeQuery(
+        name = "recuentoPorItem",
+        query ="select item_type as campo,count(*)  as recuento from pedidos group by item_type order by recuento desc",
+        resultSetMapping = "resumenDTO"
+)
+@NamedNativeQuery(
+        name = "recuentoPorChannel",
+        query ="select sales_channel as campo,count(*)  as recuento from pedidos group by sales_channel order by recuento desc",
+        resultSetMapping = "resumenDTO"
+)
+@NamedNativeQuery(
+        name = "recuentoPorPriority",
+        query ="select order_priority as campo,count(*)  as recuento from pedidos group by order_priority order by recuento desc",
+        resultSetMapping = "resumenDTO"
+)
+@SqlResultSetMapping(
+        name = "resumenDTO",
+        classes = @ConstructorResult(
+                targetClass = ResumenDTO.class,
+                columns = {
+                        @ColumnResult(name = "campo", type = String.class),
+                        @ColumnResult(name = "recuento", type = Integer.class)
+                }
+        )
+)
 public class PedidoEntity {
 
     @Id
@@ -46,19 +81,25 @@ public class PedidoEntity {
 
     public PedidoEntity() {}
     public PedidoEntity(String[] linea) {
-        this.orderId= Integer.valueOf(linea[6]);
         this.region=linea[0];
         this.country=linea[1];
         this.itemType=linea[2];
         this.salesChannel=linea[3];
         this.orderPriority=linea[4];
-        this.orderDate=new Date(linea[5]);
-        this.shipDate=new Date(linea[7]);
+        this.orderDate=Utils.parseDate(linea[5]);
+        this.orderId= Integer.valueOf(linea[6]);
+        this.shipDate=Utils.parseDate(linea[7]);
         this.unitsSold= Integer.valueOf(linea[8]);
         this.unitPrice=new BigDecimal(linea[9]);
         this.unitCost=new BigDecimal(linea[10]);
         this.totalRevenue=new BigDecimal(linea[11]);
         this.totalCost=new BigDecimal(linea[12]);
         this.totalProfit=new BigDecimal(linea[13]);
+    }
+
+    public String toString(){
+        String result = "";
+        result = this.region+","+this.country+","+this.itemType+","+this.salesChannel+","+this.orderPriority+","+ Utils.formatDate(this.orderDate)+","+this.orderId+","+Utils.formatDate(this.shipDate)+","+this.unitsSold+","+this.unitPrice+","+this.unitCost+","+this.totalRevenue+","+this.totalCost+","+this.totalProfit;
+        return result;
     }
 }
