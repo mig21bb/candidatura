@@ -2876,3 +2876,344 @@ org.springframework.expression.spel.SpelEvaluationException: EL1013E: Cannot com
 2022-12-28T19:51:15.777+01:00 DEBUG 1684 --- [http-nio-8080-exec-1] com.candidatura.espublico.bl.PedidosBL   : Consultar pedidos ordenados
 2022-12-28T19:51:16.165+01:00 DEBUG 1684 --- [http-nio-8080-exec-1] com.candidatura.espublico.bl.PedidosBL   : Fichero C:\Users\34697\AppData\Local\Temp\pedidos6982425344581960247.csv generado con 1000 líneas.
 2022-12-28T19:51:16.224+01:00 DEBUG 1684 --- [http-nio-8080-exec-1] c.c.e.controller.PedidosController       : Consultas para el resumen
+2022-12-28T19:54:45.956+01:00 DEBUG 1684 --- [http-nio-8080-exec-1] c.c.e.controller.StarWarsController      : Primero se vacía la base de datos de películas, naves y personajes
+2022-12-28T19:54:45.989+01:00 DEBUG 1684 --- [http-nio-8080-exec-1] com.candidatura.espublico.bl.CargaBL     : Vaciando los elementos de las tablas
+2022-12-28T19:54:52.281+01:00 DEBUG 1684 --- [http-nio-8080-exec-1] c.c.e.controller.StarWarsController      : La base de datos está vacía
+2022-12-28T19:54:57.831+01:00 DEBUG 1684 --- [http-nio-8080-exec-2] c.c.e.controller.StarWarsController      : Primero se vacía la base de datos de películas, naves y personajes, por si acaso
+2022-12-28T19:54:57.868+01:00 DEBUG 1684 --- [http-nio-8080-exec-2] com.candidatura.espublico.bl.CargaBL     : Vaciando los elementos de las tablas
+2022-12-28T19:54:57.960+01:00 DEBUG 1684 --- [http-nio-8080-exec-2] c.c.e.controller.StarWarsController      : Una vez vacía la BBDD se van cargando los distintos elementos
+2022-12-28T19:54:59.369+01:00 DEBUG 1684 --- [http-nio-8080-exec-2] com.candidatura.espublico.bl.CargaBL     : films cargados: 7
+2022-12-28T19:55:01.656+01:00 DEBUG 1684 --- [http-nio-8080-exec-2] com.candidatura.espublico.bl.CargaBL     : films cargados: 37
+2022-12-28T19:55:09.561+01:00 DEBUG 1684 --- [http-nio-8080-exec-2] com.candidatura.espublico.bl.CargaBL     : People cargados: 87
+2022-12-28T19:55:14.765+01:00 DEBUG 1684 --- [http-nio-8080-exec-2] c.c.e.controller.StarWarsController      : Se han cargado todos los elementos
+2022-12-28T19:55:24.635+01:00 DEBUG 1684 --- [http-nio-8080-exec-4] c.c.e.controller.PedidosController       : Cargando página para cargar ficheros de pedidos
+2022-12-28T19:56:04.097+01:00 DEBUG 1684 --- [http-nio-8080-exec-6] c.c.e.controller.PedidosController       : Cargando ruta del fichero
+2022-12-28T19:56:04.131+01:00 DEBUG 1684 --- [http-nio-8080-exec-6] com.candidatura.espublico.bl.PedidosBL   : Cargando pedido de fichero
+2022-12-28T19:56:04.148+01:00 DEBUG 1684 --- [http-nio-8080-exec-6] c.c.e.controller.PedidosController       : Error cargando el fichero en la ruta especificadaC:\Users\34697\Downloads\RegistroPedidos2.csv (El sistema no puede encontrar el archivo especificado)
+2022-12-28T19:56:04.149+01:00 ERROR 1684 --- [http-nio-8080-exec-6] c.c.e.controller.PedidosController       : C:\Users\34697\Downloads\RegistroPedidos2.csv (El sistema no puede encontrar el archivo especificado)
+2022-12-28T19:56:20.840+01:00 DEBUG 1684 --- [http-nio-8080-exec-7] c.c.e.controller.PedidosController       : Cargando ruta del fichero
+2022-12-28T19:56:20.875+01:00 DEBUG 1684 --- [http-nio-8080-exec-7] com.candidatura.espublico.bl.PedidosBL   : Cargando pedido de fichero
+2022-12-28T19:56:27.240+01:00 DEBUG 1684 --- [http-nio-8080-exec-7] com.candidatura.espublico.bl.PedidosBL   : Fichero leído
+2022-12-28T19:59:01.770+01:00  WARN 1684 --- [http-nio-8080-exec-7] o.m.jdbc.message.server.ErrorPacket      : Error: 1226-42000: User 'esuser' has exceeded the 'max_queries_per_hour' resource (current value: 10000)
+2022-12-28T19:59:01.773+01:00  WARN 1684 --- [http-nio-8080-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1226, SQLState: 42000
+2022-12-28T19:59:01.773+01:00 ERROR 1684 --- [http-nio-8080-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : (conn=30298) User 'esuser' has exceeded the 'max_queries_per_hour' resource (current value: 10000)
+2022-12-28T19:59:01.802+01:00  WARN 1684 --- [http-nio-8080-exec-7] o.m.jdbc.message.server.ErrorPacket      : Error: 1226-42000: User 'esuser' has exceeded the 'max_queries_per_hour' resource (current value: 10000)
+2022-12-28T19:59:01.811+01:00 ERROR 1684 --- [http-nio-8080-exec-7] o.s.t.i.TransactionInterceptor           : Application exception overridden by rollback exception
+
+org.springframework.dao.InvalidDataAccessResourceUsageException: JDBC exception executing SQL [select p1_0.order_id,p1_0.country,p1_0.item_type,p1_0.order_date,p1_0.order_priority,p1_0.region,p1_0.sales_channel,p1_0.ship_date,p1_0.total_cost,p1_0.total_profit,p1_0.total_revenue,p1_0.unit_cost,p1_0.unit_price,p1_0.units_sold from pedidos p1_0 where p1_0.order_id=?]; SQL [n/a]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:257) ~[spring-orm-6.0.2.jar:6.0.2]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:233) ~[spring-orm-6.0.2.jar:6.0.2]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:550) ~[spring-orm-6.0.2.jar:6.0.2]
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61) ~[spring-tx-6.0.2.jar:6.0.2]
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:242) ~[spring-tx-6.0.2.jar:6.0.2]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152) ~[spring-tx-6.0.2.jar:6.0.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.2.jar:6.0.2]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:163) ~[spring-data-jpa-3.0.0.jar:3.0.0]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.2.jar:6.0.2]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.0.2.jar:6.0.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.2.jar:6.0.2]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:218) ~[spring-aop-6.0.2.jar:6.0.2]
+	at jdk.proxy4/jdk.proxy4.$Proxy129.saveAll(Unknown Source) ~[na:na]
+	at com.candidatura.espublico.bl.PedidosBL.cargarPedidos(PedidosBL.java:56) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343) ~[spring-aop-6.0.2.jar:6.0.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.0.2.jar:6.0.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.0.2.jar:6.0.2]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:752) ~[spring-aop-6.0.2.jar:6.0.2]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-6.0.2.jar:6.0.2]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-6.0.2.jar:6.0.2]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.0.2.jar:6.0.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.2.jar:6.0.2]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:752) ~[spring-aop-6.0.2.jar:6.0.2]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:703) ~[spring-aop-6.0.2.jar:6.0.2]
+	at com.candidatura.espublico.bl.PedidosBL$$SpringCGLIB$$0.cargarPedidos(<generated>) ~[classes/:na]
+	at com.candidatura.espublico.controller.PedidosController.uploadFile(PedidosController.java:49) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207) ~[spring-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152) ~[spring-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-6.0.2.jar:6.0.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884) ~[spring-webmvc-6.0.2.jar:6.0.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-6.0.2.jar:6.0.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.0.2.jar:6.0.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1080) ~[spring-webmvc-6.0.2.jar:6.0.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973) ~[spring-webmvc-6.0.2.jar:6.0.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003) ~[spring-webmvc-6.0.2.jar:6.0.2]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:906) ~[spring-webmvc-6.0.2.jar:6.0.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731) ~[tomcat-embed-core-10.1.1.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:880) ~[spring-webmvc-6.0.2.jar:6.0.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814) ~[tomcat-embed-core-10.1.1.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-10.1.1.jar:10.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.2.jar:6.0.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.2.jar:6.0.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.2.jar:6.0.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1739) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.hibernate.exception.SQLGrammarException: JDBC exception executing SQL [select p1_0.order_id,p1_0.country,p1_0.item_type,p1_0.order_date,p1_0.order_priority,p1_0.region,p1_0.sales_channel,p1_0.ship_date,p1_0.total_cost,p1_0.total_profit,p1_0.total_revenue,p1_0.unit_cost,p1_0.unit_price,p1_0.units_sold from pedidos p1_0 where p1_0.order_id=?]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:64) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:56) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:109) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:95) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:253) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:146) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.lambda$processNext$0(JdbcValuesResultSetImpl.java:89) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advance(JdbcValuesResultSetImpl.java:274) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:85) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:29) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:89) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:142) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:32) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:443) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:166) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.list(JdbcSelectExecutorStandardImpl.java:91) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:31) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.loader.ast.internal.SingleIdLoadPlan.load(SingleIdLoadPlan.java:140) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.loader.ast.internal.SingleIdLoadPlan.load(SingleIdLoadPlan.java:110) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.loader.ast.internal.SingleIdEntityLoaderStandardImpl.load(SingleIdEntityLoaderStandardImpl.java:72) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.doLoad(AbstractEntityPersister.java:4325) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.load(AbstractEntityPersister.java:4315) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadFromDatasource(DefaultLoadEventListener.java:599) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.doLoad(DefaultLoadEventListener.java:572) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:224) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:363) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.doOnLoad(DefaultLoadEventListener.java:113) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:75) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:118) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.internal.SessionImpl.fireLoadNoChecks(SessionImpl.java:1241) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.internal.SessionImpl.fireLoad(SessionImpl.java:1229) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.loader.access.IdentifierLoadAccessImpl.doLoad(IdentifierLoadAccessImpl.java:192) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.loader.access.IdentifierLoadAccessImpl.lambda$load$1(IdentifierLoadAccessImpl.java:158) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.loader.access.IdentifierLoadAccessImpl.perform(IdentifierLoadAccessImpl.java:105) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.loader.access.IdentifierLoadAccessImpl.load(IdentifierLoadAccessImpl.java:158) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.internal.SessionImpl.get(SessionImpl.java:1026) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.lambda$entityIsDetached$0(DefaultMergeEventListener.java:343) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.engine.spi.LoadQueryInfluencers.fromInternalFetchProfile(LoadQueryInfluencers.java:79) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.entityIsDetached(DefaultMergeEventListener.java:341) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:176) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:76) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.internal.SessionImpl.fireMerge(SessionImpl.java:828) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.internal.SessionImpl.merge(SessionImpl.java:814) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at jdk.internal.reflect.GeneratedMethodAccessor50.invoke(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:360) ~[spring-orm-6.0.2.jar:6.0.2]
+	at jdk.proxy4/jdk.proxy4.$Proxy117.merge(Unknown Source) ~[na:na]
+	at jdk.internal.reflect.GeneratedMethodAccessor50.invoke(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:307) ~[spring-orm-6.0.2.jar:6.0.2]
+	at jdk.proxy4/jdk.proxy4.$Proxy117.merge(Unknown Source) ~[na:na]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:613) ~[spring-data-jpa-3.0.0.jar:3.0.0]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.saveAll(SimpleJpaRepository.java:636) ~[spring-data-jpa-3.0.0.jar:3.0.0]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:288) ~[spring-data-commons-3.0.0.jar:3.0.0]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:136) ~[spring-data-commons-3.0.0.jar:3.0.0]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:120) ~[spring-data-commons-3.0.0.jar:3.0.0]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516) ~[spring-data-commons-3.0.0.jar:3.0.0]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285) ~[spring-data-commons-3.0.0.jar:3.0.0]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628) ~[spring-data-commons-3.0.0.jar:3.0.0]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.2.jar:6.0.2]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:168) ~[spring-data-commons-3.0.0.jar:3.0.0]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143) ~[spring-data-commons-3.0.0.jar:3.0.0]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.2.jar:6.0.2]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-6.0.2.jar:6.0.2]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-6.0.2.jar:6.0.2]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.0.2.jar:6.0.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.2.jar:6.0.2]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-6.0.2.jar:6.0.2]
+	... 74 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: (conn=30298) User 'esuser' has exceeded the 'max_queries_per_hour' resource (current value: 10000)
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:282) ~[mariadb-java-client-3.0.9.jar:na]
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370) ~[mariadb-java-client-3.0.9.jar:na]
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:137) ~[mariadb-java-client-3.0.9.jar:na]
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:840) ~[mariadb-java-client-3.0.9.jar:na]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:779) ~[mariadb-java-client-3.0.9.jar:na]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:698) ~[mariadb-java-client-3.0.9.jar:na]
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:641) ~[mariadb-java-client-3.0.9.jar:na]
+	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:95) ~[mariadb-java-client-3.0.9.jar:na]
+	at org.mariadb.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:288) ~[mariadb-java-client-3.0.9.jar:na]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java) ~[HikariCP-5.0.1.jar:na]
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:217) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	... 144 common frames omitted
+
+2022-12-28T19:59:01.842+01:00 DEBUG 1684 --- [http-nio-8080-exec-7] c.c.e.controller.PedidosController       : Error cargando el los pedidosCould not roll back JPA transaction
+2022-12-28T19:59:01.842+01:00 ERROR 1684 --- [http-nio-8080-exec-7] c.c.e.controller.PedidosController       : Could not roll back JPA transaction
+2022-12-28T19:59:01.860+01:00  WARN 1684 --- [http-nio-8080-exec-7] o.m.jdbc.message.server.ErrorPacket      : Error: 1226-42000: User 'esuser' has exceeded the 'max_queries_per_hour' resource (current value: 10000)
+2022-12-28T19:59:01.861+01:00  WARN 1684 --- [http-nio-8080-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1226, SQLState: 42000
+2022-12-28T19:59:01.861+01:00 ERROR 1684 --- [http-nio-8080-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : (conn=30298) User 'esuser' has exceeded the 'max_queries_per_hour' resource (current value: 10000)
+2022-12-28T19:59:01.861+01:00 ERROR 1684 --- [http-nio-8080-exec-7] o.s.orm.jpa.EntityManagerFactoryUtils    : Failed to release JPA EntityManager
+
+org.hibernate.exception.SQLGrammarException: Unable to release JDBC Connection
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:64) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:56) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:109) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:95) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.releaseConnection(LogicalConnectionManagedImpl.java:222) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.close(LogicalConnectionManagedImpl.java:252) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.close(JdbcCoordinatorImpl.java:170) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.internal.AbstractSharedSessionContract.close(AbstractSharedSessionContract.java:377) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.internal.SessionImpl.closeWithoutOpenChecks(SessionImpl.java:403) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.internal.SessionImpl.close(SessionImpl.java:388) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at jdk.internal.reflect.GeneratedMethodAccessor16.invoke(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:360) ~[spring-orm-6.0.2.jar:6.0.2]
+	at jdk.proxy4/jdk.proxy4.$Proxy117.close(Unknown Source) ~[na:na]
+	at org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:424) ~[spring-orm-6.0.2.jar:6.0.2]
+	at org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor.afterCompletion(OpenEntityManagerInViewInterceptor.java:112) ~[spring-orm-6.0.2.jar:6.0.2]
+	at org.springframework.web.servlet.handler.WebRequestHandlerInterceptorAdapter.afterCompletion(WebRequestHandlerInterceptorAdapter.java:73) ~[spring-webmvc-6.0.2.jar:6.0.2]
+	at org.springframework.web.servlet.HandlerExecutionChain.triggerAfterCompletion(HandlerExecutionChain.java:176) ~[spring-webmvc-6.0.2.jar:6.0.2]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1176) ~[spring-webmvc-6.0.2.jar:6.0.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1097) ~[spring-webmvc-6.0.2.jar:6.0.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973) ~[spring-webmvc-6.0.2.jar:6.0.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003) ~[spring-webmvc-6.0.2.jar:6.0.2]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:906) ~[spring-webmvc-6.0.2.jar:6.0.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731) ~[tomcat-embed-core-10.1.1.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:880) ~[spring-webmvc-6.0.2.jar:6.0.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814) ~[tomcat-embed-core-10.1.1.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-10.1.1.jar:10.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.2.jar:6.0.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.2.jar:6.0.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.2.jar:6.0.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1739) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.1.jar:10.1.1]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.sql.SQLSyntaxErrorException: (conn=30298) User 'esuser' has exceeded the 'max_queries_per_hour' resource (current value: 10000)
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:282) ~[mariadb-java-client-3.0.9.jar:na]
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370) ~[mariadb-java-client-3.0.9.jar:na]
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:137) ~[mariadb-java-client-3.0.9.jar:na]
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:840) ~[mariadb-java-client-3.0.9.jar:na]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:779) ~[mariadb-java-client-3.0.9.jar:na]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:698) ~[mariadb-java-client-3.0.9.jar:na]
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:641) ~[mariadb-java-client-3.0.9.jar:na]
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:515) ~[mariadb-java-client-3.0.9.jar:na]
+	at org.mariadb.jdbc.Connection.rollback(Connection.java:222) ~[mariadb-java-client-3.0.9.jar:na]
+	at com.zaxxer.hikari.pool.ProxyConnection.close(ProxyConnection.java:249) ~[HikariCP-5.0.1.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.closeConnection(DatasourceConnectionProviderImpl.java:127) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.releaseConnection(NonContextualJdbcConnectionAccess.java:49) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.releaseConnection(LogicalConnectionManagedImpl.java:218) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	... 55 common frames omitted
+
+2022-12-28T20:01:12.597+01:00 DEBUG 1684 --- [http-nio-8080-exec-10] c.c.e.controller.PedidosController       : Cargando ruta del fichero
+2022-12-28T20:01:12.616+01:00 DEBUG 1684 --- [http-nio-8080-exec-10] com.candidatura.espublico.bl.PedidosBL   : Cargando pedido de fichero
+2022-12-28T20:01:12.616+01:00 DEBUG 1684 --- [http-nio-8080-exec-10] com.candidatura.espublico.bl.PedidosBL   : Fichero leído
+2022-12-28T20:01:12.670+01:00 DEBUG 1684 --- [http-nio-8080-exec-10] com.candidatura.espublico.bl.PedidosBL   : Pedidos cargados en base de datos
+2022-12-28T20:01:12.687+01:00 DEBUG 1684 --- [http-nio-8080-exec-10] c.c.e.controller.PedidosController       : Generación de archivo con los registros ordenados.
+2022-12-28T20:01:12.688+01:00 DEBUG 1684 --- [http-nio-8080-exec-10] com.candidatura.espublico.bl.PedidosBL   : Consultar pedidos ordenados
+2022-12-28T20:01:12.835+01:00 DEBUG 1684 --- [http-nio-8080-exec-10] com.candidatura.espublico.bl.PedidosBL   : Fichero C:\Users\34697\AppData\Local\Temp\pedidos8846480259871246066.csv generado con 1000 líneas.
+2022-12-28T20:01:12.857+01:00 DEBUG 1684 --- [http-nio-8080-exec-10] c.c.e.controller.PedidosController       : Consultas para el resumen
+2022-12-28T20:07:51.220+01:00  INFO 11900 --- [restartedMain] c.c.espublico.EspublicoApplication       : Starting EspublicoApplication using Java 17.0.5 with PID 11900 (C:\Users\34697\Documents\Mis Proyectos\candidaturaespublico\espublico\candidatura\target\classes started by 34697 in C:\Users\34697\Documents\Mis Proyectos\candidaturaespublico\espublico\candidatura)
+2022-12-28T20:07:51.222+01:00 DEBUG 11900 --- [restartedMain] c.c.espublico.EspublicoApplication       : Running with Spring Boot v3.0.0, Spring v6.0.2
+2022-12-28T20:07:51.223+01:00  INFO 11900 --- [restartedMain] c.c.espublico.EspublicoApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-12-28T20:07:54.485+01:00  WARN 11900 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2022-12-28T20:07:56.629+01:00  WARN 11900 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-28T20:07:57.534+01:00  INFO 11900 --- [restartedMain] c.c.espublico.EspublicoApplication       : Started EspublicoApplication in 6.935 seconds (process running for 7.645)
+2022-12-28T20:08:08.435+01:00 DEBUG 11900 --- [http-nio-8080-exec-1] c.c.e.controller.PedidosController       : Cargando página para cargar ficheros de pedidos
+2022-12-28T20:09:13.827+01:00  INFO 7020 --- [restartedMain] c.c.espublico.EspublicoApplication       : Starting EspublicoApplication using Java 17.0.5 with PID 7020 (C:\Users\34697\Documents\Mis Proyectos\candidaturaespublico\espublico\candidatura\target\classes started by 34697 in C:\Users\34697\Documents\Mis Proyectos\candidaturaespublico\espublico\candidatura)
+2022-12-28T20:09:13.828+01:00 DEBUG 7020 --- [restartedMain] c.c.espublico.EspublicoApplication       : Running with Spring Boot v3.0.0, Spring v6.0.2
+2022-12-28T20:09:13.830+01:00  INFO 7020 --- [restartedMain] c.c.espublico.EspublicoApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-12-28T20:09:17.152+01:00  WARN 7020 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2022-12-28T20:09:19.287+01:00  WARN 7020 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-28T20:09:20.123+01:00  INFO 7020 --- [restartedMain] c.c.espublico.EspublicoApplication       : Started EspublicoApplication in 6.921 seconds (process running for 7.646)
+2022-12-28T20:09:33.500+01:00 DEBUG 7020 --- [http-nio-8080-exec-2] c.c.e.controller.PedidosController       : Cargando página para cargar ficheros de pedidos
+2022-12-28T20:09:40.357+01:00 DEBUG 7020 --- [http-nio-8080-exec-3] c.c.e.controller.PedidosController       : vaciando todos los pedidos
+2022-12-28T20:10:36.516+01:00 DEBUG 7020 --- [http-nio-8080-exec-5] c.c.e.controller.PedidosController       : Cargando ruta del fichero
+2022-12-28T20:10:36.551+01:00 DEBUG 7020 --- [http-nio-8080-exec-5] com.candidatura.espublico.bl.PedidosBL   : Cargando pedido de fichero
+2022-12-28T20:10:36.553+01:00 DEBUG 7020 --- [http-nio-8080-exec-5] com.candidatura.espublico.bl.PedidosBL   : Fichero leído
+2022-12-28T20:10:36.628+01:00 DEBUG 7020 --- [http-nio-8080-exec-5] com.candidatura.espublico.bl.PedidosBL   : Pedidos cargados en base de datos
+2022-12-28T20:10:36.716+01:00 DEBUG 7020 --- [http-nio-8080-exec-5] c.c.e.controller.PedidosController       : Generación de archivo con los registros ordenados.
+2022-12-28T20:10:36.732+01:00 DEBUG 7020 --- [http-nio-8080-exec-5] com.candidatura.espublico.bl.PedidosBL   : Consultar pedidos ordenados
+2022-12-28T20:10:36.788+01:00 DEBUG 7020 --- [http-nio-8080-exec-5] com.candidatura.espublico.bl.PedidosBL   : Fichero C:\Users\34697\AppData\Local\Temp\pedidos16451734730338082554.csv generado con 3 líneas.
+2022-12-28T20:10:36.822+01:00 DEBUG 7020 --- [http-nio-8080-exec-5] c.c.e.controller.PedidosController       : Consultas para el resumen
+2022-12-28T20:10:36.937+01:00 DEBUG 7020 --- [http-nio-8080-exec-5] c.c.e.controller.PedidosController       : Error generando el resumen.Index 2 out of bounds for length 2
+2022-12-28T20:10:36.937+01:00 ERROR 7020 --- [http-nio-8080-exec-5] c.c.e.controller.PedidosController       : Index 2 out of bounds for length 2
+2022-12-28T20:11:43.538+01:00 DEBUG 7020 --- [http-nio-8080-exec-8] c.c.e.controller.PedidosController       : Cargando ruta del fichero
+2022-12-28T20:11:43.573+01:00 DEBUG 7020 --- [http-nio-8080-exec-8] com.candidatura.espublico.bl.PedidosBL   : Cargando pedido de fichero
+2022-12-28T20:11:43.580+01:00 DEBUG 7020 --- [http-nio-8080-exec-8] com.candidatura.espublico.bl.PedidosBL   : Fichero leído
+2022-12-28T20:11:44.321+01:00 DEBUG 7020 --- [http-nio-8080-exec-8] com.candidatura.espublico.bl.PedidosBL   : Pedidos cargados en base de datos
+2022-12-28T20:11:44.983+01:00 DEBUG 7020 --- [http-nio-8080-exec-8] c.c.e.controller.PedidosController       : Generación de archivo con los registros ordenados.
+2022-12-28T20:11:45.001+01:00 DEBUG 7020 --- [http-nio-8080-exec-8] com.candidatura.espublico.bl.PedidosBL   : Consultar pedidos ordenados
+2022-12-28T20:11:45.026+01:00 DEBUG 7020 --- [http-nio-8080-exec-8] com.candidatura.espublico.bl.PedidosBL   : Fichero C:\Users\34697\AppData\Local\Temp\pedidos9103037472664500832.csv generado con 38 líneas.
+2022-12-28T20:11:45.059+01:00 DEBUG 7020 --- [http-nio-8080-exec-8] c.c.e.controller.PedidosController       : Consultas para el resumen
+2022-12-28T20:11:45.150+01:00 DEBUG 7020 --- [http-nio-8080-exec-8] c.c.e.controller.PedidosController       : Error generando el resumen.Index 2 out of bounds for length 2
+2022-12-28T20:11:45.150+01:00 ERROR 7020 --- [http-nio-8080-exec-8] c.c.e.controller.PedidosController       : Index 2 out of bounds for length 2
+2022-12-28T20:12:26.233+01:00  INFO 25976 --- [restartedMain] c.c.espublico.EspublicoApplication       : Starting EspublicoApplication using Java 17.0.5 with PID 25976 (C:\Users\34697\Documents\Mis Proyectos\candidaturaespublico\espublico\candidatura\target\classes started by 34697 in C:\Users\34697\Documents\Mis Proyectos\candidaturaespublico\espublico\candidatura)
+2022-12-28T20:12:26.235+01:00 DEBUG 25976 --- [restartedMain] c.c.espublico.EspublicoApplication       : Running with Spring Boot v3.0.0, Spring v6.0.2
+2022-12-28T20:12:26.236+01:00  INFO 25976 --- [restartedMain] c.c.espublico.EspublicoApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-12-28T20:12:29.391+01:00  WARN 25976 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2022-12-28T20:12:31.518+01:00  WARN 25976 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-28T20:12:32.346+01:00  INFO 25976 --- [restartedMain] c.c.espublico.EspublicoApplication       : Started EspublicoApplication in 6.697 seconds (process running for 7.399)
+2022-12-28T20:12:38.138+01:00 DEBUG 25976 --- [http-nio-8080-exec-1] c.c.e.controller.PedidosController       : Cargando ruta del fichero
+2022-12-28T20:12:38.180+01:00 DEBUG 25976 --- [http-nio-8080-exec-1] com.candidatura.espublico.bl.PedidosBL   : Cargando pedido de fichero
+2022-12-28T20:12:38.188+01:00 DEBUG 25976 --- [http-nio-8080-exec-1] com.candidatura.espublico.bl.PedidosBL   : Fichero leído
+2022-12-28T20:12:39.119+01:00 DEBUG 25976 --- [http-nio-8080-exec-1] com.candidatura.espublico.bl.PedidosBL   : Pedidos cargados en base de datos
+2022-12-28T20:12:39.164+01:00 DEBUG 25976 --- [http-nio-8080-exec-1] c.c.e.controller.PedidosController       : Generación de archivo con los registros ordenados.
+2022-12-28T20:12:39.180+01:00 DEBUG 25976 --- [http-nio-8080-exec-1] com.candidatura.espublico.bl.PedidosBL   : Consultar pedidos ordenados
+2022-12-28T20:12:39.304+01:00 DEBUG 25976 --- [http-nio-8080-exec-1] com.candidatura.espublico.bl.PedidosBL   : Fichero C:\Users\34697\AppData\Local\Temp\pedidos591050436562603986.csv generado con 38 líneas.
+2022-12-28T20:12:39.337+01:00 DEBUG 25976 --- [http-nio-8080-exec-1] c.c.e.controller.PedidosController       : Consultas para el resumen
+2022-12-28T20:13:03.695+01:00 DEBUG 25976 --- [http-nio-8080-exec-2] c.c.e.controller.PedidosController       : Cargando ruta del fichero
+2022-12-28T20:13:03.730+01:00 DEBUG 25976 --- [http-nio-8080-exec-2] com.candidatura.espublico.bl.PedidosBL   : Cargando pedido de fichero
+2022-12-28T20:13:10.201+01:00 DEBUG 25976 --- [http-nio-8080-exec-2] com.candidatura.espublico.bl.PedidosBL   : Fichero leído

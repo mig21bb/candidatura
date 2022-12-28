@@ -35,6 +35,14 @@ public class PedidosController {
         return "pedidos";
     }
 
+    @GetMapping("/vaciarPedidos")
+    public String vaciarPedidos(Model model) {
+        log.debug("vaciando todos los pedidos");
+        long total = pedidosBL.vaciarPedidos();
+        model.addAttribute("mensaje","Se han eliminado "+total+" pedidos");
+        return "pedidos";
+    }
+
 	@PostMapping(value="/cargar")
     public String uploadFile(@RequestParam(name="ruta", required=true) String ruta, Model model) {
         log.debug("Cargando ruta del fichero");
@@ -99,7 +107,8 @@ public class PedidosController {
 
 
         }
-        model.addAttribute("mensaje","Éxito en la importación.");
+
+        model.addAttribute("mensaje","Éxito en la importación. En la Base de datos existen "+pedidosBL.contarRegistros()+" registros.");
         return "pedidos";
 	}
 

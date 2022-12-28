@@ -90,24 +90,34 @@ public class PedidosBL {
         consulta = new ArrayList<>();
         consulta.add(new ResumenDTO("Por item_type",total));
         resumen.add(consulta);
-        resumen.get(2).addAll(pedidosRepository.recuentoPorItem());
+        resumen.get(1).addAll(pedidosRepository.recuentoPorItem());
 
         consulta = new ArrayList<>();
         consulta.add(new ResumenDTO("Por canal de venta",total));
         resumen.add(consulta);
-        resumen.get(3).addAll(pedidosRepository.recuentoPorChannel());
+        resumen.get(2).addAll(pedidosRepository.recuentoPorChannel());
 
         consulta = new ArrayList<>();
         consulta.add(new ResumenDTO("Por prioridad",total));
         resumen.add(consulta);
-        resumen.get(4).addAll(pedidosRepository.recuentoPorPriority());
+        resumen.get(3).addAll(pedidosRepository.recuentoPorPriority());
 
         consulta = new ArrayList<>();
         consulta.add(new ResumenDTO("Por pais",total));
         resumen.add(consulta);
-        resumen.get(1).addAll(pedidosRepository.recuentoPorPais());
+        resumen.get(4).addAll(pedidosRepository.recuentoPorPais());
         return resumen;
     }
 
+    @Transactional
+    public Long contarRegistros() {
+        return pedidosRepository.count();
+    }
 
+
+    public long vaciarPedidos() {
+        long total= pedidosRepository.count();
+        pedidosRepository.deleteAll();
+        return total;
+    }
 }
